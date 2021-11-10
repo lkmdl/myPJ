@@ -4,40 +4,21 @@
 <head>
     <meta charset="utf-8">
     <title>네이버 요약뉴스 - 메인</title>
-    <!-- style요소: 스타일 시트 영역 태그 -->
-    <style>
-        /*
-                css주석
-
-                css형식
-
-                요소명{
-                    속성명:값;
-                }
-             */
-        .wrap {
-            width: 727px;
-            margin: 0 auto;
-            /* 블록박스 가로중앙! */
-        }
-
-        /* 텍스트 중앙 class */
-        .tac {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="css/common.css">
 
 <body>
     <div class="wrap">
 
         <!-- 1. 상단영역 -->
-        <header class="tac">
+        <header class="tac bgc">
             <!-- 1.1.제목 -->
-            <h1>네이버 요약 뉴스 -경제</h1>
+            <h1 id="mtit">네이버 요약 뉴스 -경제</h1>
             <!-- 1.2.메뉴 -->
             <nav>
                 <a href="index.html">
-                    <img src="images/naverLog.png" alt="naverLog" style="width: 20px;">
+                    <img src="images/naverLog.png"
+                    alt="naverLog" style="width: 20px;"
+                    id="logo">
                     <!-- style속성: css셋팅값적용 -->
                 </a>
                 <a href="sub1.html">정치</a> |
@@ -56,14 +37,15 @@
             <img src="images/atp2.png" alt="atp2Log">
 
             <!-- 2.제목 -->
-            <h1 class="tit">실손보험 가입자 2%가 1000만원 이상 수령…60%는 0원</h1>
+            <h2 class="tit">실손보험 가입자 2%가 1000만원 이상 수령…60%는 0원</h2>
             <!-- 3.이미지박스 -->
             <img src="images/at2.jpg" alt="atp2Image">
             <!-- 4.기사내용 -->
-            <p>[헤럴드경제=정경수 기자] 지난해 실손의료보험(실손보험) 가입자 중 2.2%가 1000만원 이상의 보험금을 받아간 것으로 나타났다. 반면 한 차례도 이용하지 않은 고객은 60%를 차지했다.</p>
+            <p>[헤럴드경제=정경수 기자] 지난해 실손의료보험(실손보험) 가입자 중 2.2%가 1000만원 이상의 보험금을 받아간 것으로 나타났다. 반면 한 차례도 이용하지 않은 고객은 60%를 차지했다.
+            </p>
 
             9일 보험업계에 따르면<p>
-                 지난해 실손보험 가입자 3496만명 가운데 1000만원이 넘는 고액 수령자는 76만명으로 전체 가입자의 2.2%로 집계됐다. 보험금 지급액이 5000만원을 초과하는
+                지난해 실손보험 가입자 3496만명 가운데 1000만원이 넘는 고액 수령자는 76만명으로 전체 가입자의 2.2%로 집계됐다. 보험금 지급액이 5000만원을 초과하는
                 가입자도 9만명에 달했다
             </p>.
 
@@ -79,7 +61,7 @@
             </p>진료를 대규모 적자의 주원인으로 보험업계는 지목한다.
 
             보험업계는 큰 손실을 이유로 올해<p>
-                 1세대(2009년 이전 판매) 구실손보험의 보험료를 6.8∼21.2%, 2세대 표준화실손보험(2009년∼2017년 판매) 보험료를 6.8∼21.2% 각각
+                1세대(2009년 이전 판매) 구실손보험의 보험료를 6.8∼21.2%, 2세대 표준화실손보험(2009년∼2017년 판매) 보험료를 6.8∼21.2% 각각
                 올렸으나 적자는 되레 커지는 양상이
             </p>다.
 
@@ -103,9 +85,9 @@
         </main>
         <hr>
         <!-- 3. 하단영역 -->
-        기사본문
-        https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=016&aid=0001910008
-        <footer>
+        <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=016&aid=0001910008"
+            target="_blank">원본기사</a>
+        <footer class="tac bgc">
             <address>
                 서울시 강남구 대호빌딩 8층 302호 <br>
                 CEO: choi <br>
@@ -114,26 +96,7 @@
         </footer>
         <hr>
     </div>
-    <!-- 
-        [ HTML 핵심 요소들 - 페이지에 단 한번만 등장! ]
-        1.html: 최상위 부모
-        2.head: 기본정보영역
-        3.body: 화면출력영역
-        
-        [ 레이아웃 관련 요소들 - 블록요소 ]
-        1. div: divide / division 구분구역을 위한 요소
-        2. header: 머리부분
-        3. foodter: 하단부분
-        4. main: 중앙 내용부분(주의: 웹 페이지에 한번만 쓸 수 있음)
-        5. nave: 네비게이션 영역
-
-        ※레이아웃용 태그인 header, footer, main, nav 등은
-        div를 구체적인 내용으로 변경한 형제들이다!
-        (시멘틱태그-유의미한 요소)
-         -->
 </body>
 </head>
 
 </html>
-
-<!-- 리엑트 -->

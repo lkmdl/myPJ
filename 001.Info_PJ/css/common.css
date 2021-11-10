@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* 외부 CSS파일 상단엔 반드시 문자셋을 해야함!! */
 
+
 .wrap {
     width: 727px;
     margin: 0 auto;
@@ -25,6 +26,12 @@ h1#mtit{
     text-indent: 2px 2px 2px #888;
 }
 
+/* 메인 공통 p요소 */
+main p{
+    line-height: 1.7;
+    font-size: 17px;
+}
+
 /* 1. 타입선택자(요소명) */
 address {
     font-style: normal;
@@ -43,4 +50,40 @@ header a {
     /* 글자색 */
     text-decoration: none;
     /* 밑줄없앰 */
+}
+
+/* 3. 직계자식선택자(>) */
+main>a {
+    color: indigo;
+    /* 글자색 */
+    text-decoration: none;
+    /* 밑줄없앰 */
+    font-size: 20px;
+    /* 글자크기 */
+    text-shadow: 1px 1px 1px #000;
+    ;
+    /* 글자그림자: x y blur 색 */
+}
+
+/* 4. 아이디 선택자(#) */
+#logo {
+    vertical-align: -4px;
+    /* 인라인요소간 세로정렬 */
+    margin-right: 3px;
+    /* 오른쪽 마진 */
+}
+
+/* 5. 클래스 선택자(.) */
+.tit {
+    text-align: center;
+    font-family: "궁서체";
+    /* 글씨체 */
+    font-size: 30px;
+    /* 글씨크기 */
+    letter-spacing: 0;
+    /* 자간 */
+    word-spacing: 0;
+    /* 단어사이 */
+    /* white-space: nowrap; */
+    /* 줄바꿈 금지 */
 }
