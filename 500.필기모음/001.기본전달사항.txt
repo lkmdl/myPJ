@@ -1,5 +1,4 @@
 [ 웹퍼블리셔 2021년 기본전달사항 ]
-- 쌤멜: tombap@naver.com
 
 1. 교재: NCS 2권, 개발서 2권
 
@@ -35,3 +34,5 @@ https://github.com/
 https://www.skcareers.com/
 http://www.gsgcorp.com/Kr/
 
+
+- 쌤멜: tombap@naver.com
