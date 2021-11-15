@@ -19,9 +19,33 @@ body{
     이미지의 양쪽, 위아래를 적절히 조정하여 대상 박스를 꽉 채움 */
 }
 
-/***************************** 메인영역 ********************************/
+/* 스크롤바 트랙 디자인 변경 class */
+/* -webkit- 벤더사명(크롬, 사파리) 접두어 */
+.scbar::-webkit-scrollbar {
+    /* 전체 스크롤바 크기변경 */
+    width: 5px;
+}
+.scbar::-webkit-scrollbar-thumb{
+    /* 스크롤바 */
+    background-color: #666;
+    border-radius: 5px;
+}
+.scbar::-webkit-scrollbar-track{
+    /* 스크롤바 트랙 */
+    background-color:#ccc;
+    border-radius: 5px;
+}
+
+/***************************** 상단영역 ********************************/
+.top{
+    min-height: 123px;
+    /* 최소높이 123px보다 내용이 많아지면 늘어남 */
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
 
 /**************************** 컨텐츠영역 *******************************/
+
 /* 2-1.캐릭터 박스 */
 #cbx{
     width: 90%;
@@ -30,8 +54,10 @@ body{
     /* 블럭요소 가로 중앙 정렬 */
     margin-top:30%;
 
+/* redline redline redline redline redline redline redline  */
+outline: 10px dotted red;
+/* redline redline redline redline redline redline redline  */
 
-    outline: 10px dotted red;
     /*
     outline: 두께 종류 색상
     외관선 - 다른요소에 영향없이 외각선을 표시함
@@ -39,8 +65,14 @@ body{
     요소를 표시할때 사용함(input요소에 많이 사용)
     */
 
-    overflow: hidden;
+    /* overflow: hidden; */
     /* float처리된 자식요소의 높이값 인식을 위함 */
+}
+/* 가상요소로 부모 박스 clear:both만들기 */
+#cbx::after{
+    content: '';
+    display: block;
+    clear: both;
 }
 
 /* 캐릭터 박스 공통 */
@@ -48,15 +80,106 @@ body{
     width: 25%;/* 4등분 */
     height: 100%;
 
+    padding: 5px;
+    box-sizing: border-box;
+    /* 패딩때문에 박스가 커지지 않게 패딩을 내부로 포함 */
+
     /* block박스는 옆에 다른요소가 못옴
     float속성으로 옆으로 흘러가게 해준다! */
     float: left;
     /* 나는 왼쪽에 있고 아랫쪽 요소는 오른쪽으로 흘러가라 */
-    outline: 5px dashed black;
+
+    /* outline: 5px dashed black; */
+
+    transition: margin-top .6s ease-out;
+}
+/* 캐릭터박스에 오버시 마진탑 변경하기 */
+.cat:hover{
+    margin-top:-14%;
 }
 
-.cat img{
+/* 캐릭터 이미지 */
+.cat > img{ /* 직계(>) 이미지만 선택! */
     width: 100%;
+    /* 이지미의 height는 자동(비율유지) */
+}
+
+/* 캐릭터 이미지 */
+.ci > img{ /* 직계자식(>)이미지만 선택! */
+    width:100%
+    /* 이미지의 height는 자동(비율유지) */
+}
+
+/* 캐릭터 이름 */
+.ci span{
+    display: block;
+    /* 블록으로 변경 */
+    text-align: center;
+    /* 내용 인라인요소 가로중앙 */
+    margin-top: -21%;
+    /* 비율로 이미지가 변됭되므로
+    마진도 상대적으로 변경되게함 */
+}
+
+/* 캐릭터 이름 이미지 */
+.ci span img{
+    width: 40%;
+}
+
+/* 캐릭터 이름 첫번째 이미지 숨기기 */
+.ci span img:first-child{
+    display: none;
+}
+
+/* .cat박스에 마우스 오버시 */
+/* 캐릭터 이름 첫번째 이미지보이기  */
+.cat:hover .ci span img:first-child{
+    display : inline;
+}
+/* 캐릭터 이름 마지막 이미지 숨기기*/
+.cat:hover .ci span img:last-child{
+    display: none;
+}
+
+/* 캐릭터 설명박스 */
+.cd {
+    height: 0px;
+    /* .cat에 오버시 250px로 변경 */
+    overflow-y: scroll;
+    /* 스크롤 y축만 생성, 넘치는 자식요소 보이기 */
+    background: url(../images/eachBG.jpg) no-repeat center/cover;
+
+    border-radius: 5px 0px 0px 5px;
+    /* 둥근모서리: 왼위 오른위 오른아래 왼아래 */
+
+    margin-top: 10px;
+
+    /* 트랜지션: 속시이지 */
+    transition: height .6s ease-in-out;
+}
+
+.cat:hover .cd{
+    height: 250px;
+}
+
+/* 캐릭터 설명 타이틀 */
+.cd h3 {
+    padding: 5px 10px 0;
+    /* 패딩: 위 양쪽 아래 */
+}
+
+/* 캐릭터 설명 문단 */
+.cd p {
+    padding: 10px;
+    /* 패딩: 4방향 */
+    text-align: justify;
+    /* 양쪽정렬 */
 }
 
 /***************************** 하단영역 ********************************/
+.info{
+    min-height: 240px;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* 반투명 배경색(알파값이 투명도) */
+    padding: 15px;
+}
