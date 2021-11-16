@@ -1,6 +1,9 @@
 @charset "uft-8";
 /* 도깨비 메인 css - main.css */
 
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&family=Nanum+Brush+Script&display=swap');
+
 html,body{
     margin: 0;
     padding: 0;
@@ -164,12 +167,14 @@ outline: 10px dotted red;
 
 /* 캐릭터 설명 타이틀 */
 .cd h3 {
+    font-family: 'Nanum Brush Script';    
     padding: 5px 10px 0;
     /* 패딩: 위 양쪽 아래 */
 }
 
 /* 캐릭터 설명 문단 */
 .cd p {
+    font-family: 'Hi Melody';
     padding: 10px;
     /* 패딩: 4방향 */
     text-align: justify;
