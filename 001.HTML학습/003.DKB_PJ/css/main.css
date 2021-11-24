@@ -210,7 +210,7 @@ h1.logo {
     /* 무엇을 기준으로 100%d인가 */
     /* 부모자격이 있는 요소를 기분함, 여기서는 보이는 화면 */
 
-    height:0px;
+    height:0;
     /* 각각의 li마다 오버시 높이값이 다름 */
     background-color: #fff;
     /* 상단영역 하단보더 1px 보이게 하기위해
@@ -255,7 +255,7 @@ h1.logo {
     /* height: 300px; */
     margin: 0 auto;
     /* 블럭요소 가로 중앙 정렬 */
-    margin-top: 30%;
+    /* margin-top: 30%; */
     /* 블록요소 가로중앙정렬 - 마영오 */
     /* margin-top: 30% */
     /* -> 가로크기에 따라 위친가 들쑥날쑥해서 사용안함 */
@@ -305,7 +305,7 @@ h1.logo {
 /* 캐릭터 이미지 */
 .ci>img {
     /* 직계자식(>)이미지만 선택! */
-    width: 100%
+    width: 100%;
         /* 이미지의 height는 자동(비율유지) */
 }
 
@@ -355,7 +355,7 @@ h1.logo {
     margin-top: 10px;
 
     /* 트랜지션: 속시이지 */
-    transition: height .6s ease-in-out;
+    transition: height .6s ease-out;
 }
 
 .cat:hover .cd {
@@ -367,7 +367,7 @@ h1.logo {
     font-family: 'Nanum Brush Script';
     font-size: 24px;
     font-weight: normal;
-    padding: 5px 10px 0;
+    padding: 5px 10px 0px;
     /* 패딩: 위 양쪽 아래 */
 }
 
@@ -423,6 +423,7 @@ ul.bmenu {
 /* 주소박스 */
 .info address{
     max-width: 720px;
+
     margin: 20px auto;
     /* 마진: 위아래 앙쪽 */
     font-style: normal;
