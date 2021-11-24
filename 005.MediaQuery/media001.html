@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--
+    <!--
 [ 뷰포트(viewport)란? ]
 mata  요소 속성 name="viewport" 로 설정
 - 모바일 기기에서 볼때 모바일 기기의 랜더링 화면사이즈를
@@ -28,7 +28,7 @@ content 속성에
 -->
     <title>미디어쿼리란?</title>
     <style>
-/* 
+        /* 
 [ 미디어쿼리(Media Query)란? ]
 
 - 디바이스의 가로 사이즈에 대해 계속된
@@ -181,9 +181,9 @@ ex)
         /************ 미디어쿼리 적용하기 ************/
         /* 1200px 이하 */
         @media only screen and (max-width:1200px) {
-            
+
             /* 타이틀 가상요소 변경하기 */
-            .tit::after{
+            .tit::after {
                 content: '1200px 이하';
                 color: pink;
             }
@@ -194,204 +194,221 @@ ex)
             }
 
             /* 두번째 이미지 보이기 */
-            .screen img:nth-child(2){
+            .screen img:nth-child(2) {
                 display: inline;
             }
 
-        } /* 1200px 이하 */
-       
+        }
+
+        /* 1200px 이하 */
+
 
         /* 1100px 이하 */
         @media only screen and (max-width:1100px) {
 
             /* 타이틀 가상요소 변경하기 */
-            .tit::after{
+            .tit::after {
                 content: '1100px 이하';
                 color: lime;
             }
 
             /* 두번째 이미지 숨기기 */
-            .screen img:nth-child(2){
+            .screen img:nth-child(2) {
                 display: none;
             }
 
             /* 세번째 이미지 보이기 */
-            .screen img:nth-child(3){
+            .screen img:nth-child(3) {
                 display: inline;
             }
-            
-        }/* 1100px 이하 */
-        
+
+        }
+
+        /* 1100px 이하 */
+
 
 
         /* 1000px 이하*/
         @media only screen and (max-width:1000px) {
-            
+
             /* 타이틀 가상요소 변경하기 */
-            .tit::after{
+            .tit::after {
                 content: '1000px 이하';
                 color: lightsalmon;
             }
 
             /* 세번째 이미지 숨기기 */
-            .screen img:nth-child(3){
+            .screen img:nth-child(3) {
                 display: none;
             }
 
             /* 네번째 이미지 보이기 */
-            .screen img:nth-child(4){
+            .screen img:nth-child(4) {
                 display: inline;
             }
 
-            
-            
-        }/* 1000px 이하*/
-        
-        
+
+
+        }
+
+        /* 1000px 이하*/
+
+
         /* 900px 이하 */
         @media only screen and (max-width:900px) {
-            
+
             /* 타이틀 가상요소 변경하기 */
-            .tit::after{
+            .tit::after {
                 content: '900px 이하';
             }
 
             /* 네번째 이미지 숨기기 */
-            .screen img:nth-child(4){
+            .screen img:nth-child(4) {
                 display: none;
             }
 
             /* 다섯번째 이미지 보이기 */
-            .screen img:nth-child(5){
+            .screen img:nth-child(5) {
                 display: inline;
             }
 
-        }/* 900px 이하 */
+        }
+
+        /* 900px 이하 */
 
 
         /* 850px 이하 */
         @media only screen and (max-width:850px) {
 
             /* 타이틀 가상요소 변경하기 */
-            .tit::after{
+            .tit::after {
                 content: '850px 이하';
                 color: lightgoldenrodyellow;
             }
 
             /* 다섯번째 이미지 숨기기 */
-            .screen img:nth-child(5){
-                 display: none;
-        } 
-
-            /* 여섯번째 이미지 보이기 */
-            .screen img:nth-child(6){
-            display: inline;
+            .screen img:nth-child(5) {
+                display: none;
             }
 
-        } /* 850px 이하 *
+            /* 여섯번째 이미지 보이기 */
+            .screen img:nth-child(6) {
+                display: inline;
+            }
+
+        }
+
+        /* 850px 이하 *
         
 
         /* 830px 이하 */
         @media only screen and (max-width:830px) {
 
             /* 타이틀 가상요소 변경하기 */
-            .tit::after{
+            .tit::after {
                 content: '830px 이하';
                 color: lightseagreen;
             }
 
             /* 여섯번째 이미지 숨기기 */
-            .screen img:nth-child(6){
+            .screen img:nth-child(6) {
                 display: none;
             }
 
             /* 일곱번째 이미지 보이기 */
-            .screen img:nth-child(7){
+            .screen img:nth-child(7) {
                 display: inline;
             }
 
-        }/* 830px 이하 */
-        
+        }
+
+        /* 830px 이하 */
+
 
         /* 810px 이하 */
-        @media only screen and (max-width:810px){
+        @media only screen and (max-width:810px) {
 
             /* 가상요소 변경하기 */
-            .tit::after{
+            .tit::after {
                 content: '810px이하';
                 color: lightcyan;
             }
 
             /* 일곱번째 이미지 숨기기 */
-            .screen img:nth-child(7){
+            .screen img:nth-child(7) {
                 display: none;
             }
 
             /* 여덟번째 이미지 보이기 */
-            .screen img:nth-child(8){
+            .screen img:nth-child(8) {
                 display: inline;
             }
 
-        }/* 810px 이하 */
-        
+        }
+
+        /* 810px 이하 */
+
 
         /* 790px 이하 */
-        @media only screen and (max-width:790px){
+        @media only screen and (max-width:790px) {
 
             /* 가상요소 변경하기 */
-            .tit::after{
+            .tit::after {
                 content: '790px이하';
                 color: skyblue;
             }
 
 
             /* 여덟번째 이미지 숨기기 */
-            .screen img:nth-child(8){
-                display: none;            
-        }
+            .screen img:nth-child(8) {
+                display: none;
+            }
 
             /* 아홉번째 이미지 보이기 */
-            .screen img:nth-child(9){
+            .screen img:nth-child(9) {
                 display: inline;
             }
-            
-        }/* 790px 이하 */
-        
+
+        }
+
+        /* 790px 이하 */
+
 
         /* 770px 이하 */
         @media only screen and (max-width:770px) {
-            
+
             /* 가상요소 변경하기 */
-            .tit::after{
+            .tit::after {
                 content: '770px이하';
                 color: red;
             }
 
             /* 아홉번째 이미지 숨기기 */
-            .screen img:nth-child(9){
+            .screen img:nth-child(9) {
                 display: none;
             }
 
             /* 마지막 이미지 보이기 */
-            .screen img:last-child{
+            .screen img:last-child {
                 display: inline;
             }
 
             /* 모바일 화면 최적화 */
 
             /* .bx 가상요소 배경이미지 변경 */
-            .bx::after{
+            .bx::after {
                 background-position: top;
                 background-size: auto 60%;
             }
 
             /* 스크린 위치조정 */
-            .screen{
+            .screen {
                 top: 135px;
             }
 
-        }/* 770px 이하 */
-        
+        }
+
+        /* 770px 이하 */
     </style>
 </head>
 

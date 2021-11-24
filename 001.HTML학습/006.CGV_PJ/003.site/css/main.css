@@ -193,6 +193,7 @@ h1.tit {
     transition: transform .5s .3s;
 
 }
+
 /* .gnb 에 오버시 영사기 회전수평각 */
 .gnb:hover #cam img {
     transform: rotate(0deg);
@@ -206,7 +207,8 @@ h1.tit {
     top: -16px;
     right: 6px;
     /* 나의 부모는? #cam */
-    width: 0;/* 오버시 200px */
+    width: 0;
+    /* 오버시 200px */
     height: 70px;
     background: url(../images/bim.png) no-repeat;
     background-position: right center;
@@ -220,7 +222,7 @@ h1.tit {
 }
 
 /* .gnb에 마우스 오버시 빔쏘기 애니 */
-.gnb:hover .bim{
+.gnb:hover .bim {
     width: 200px;
     transition-delay: .5s;
     /* 원본에 없는 지연시간설정 */
@@ -238,7 +240,9 @@ h1.tit {
     to {
         opacity: 0.5;
     }
-}/* 키프레임 */
+}
+
+/* 키프레임 */
 /*************** 2. 메인영역 ***************/
 #cont {
     position: relative;
@@ -349,6 +353,7 @@ h1.tit {
     /* 부모자격 - .sns */
     height: 100px;
 }
+
 /* 3-1.회사정보박스 */
 #info address {
     color: #fff;
@@ -362,6 +367,7 @@ h1.tit {
     padding-top: 20px;
     padding-left: 20px;
 }
+
 /* 하단로고 이미지 */
 #info img {
     float: left;
@@ -393,10 +399,12 @@ h1.tit {
 .sns li:first-child {
     background-position: -509px -429px;
 }
+
 /* 인스타그램 */
 .sns li:nth-child(2) {
     background-position: -551px -429px;
 }
+
 /* 페이스북 */
 .sns li:last-child {
     background-position: -593px -429px;

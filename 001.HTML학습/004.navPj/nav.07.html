@@ -7,12 +7,12 @@
     <title>유형7 : 가로네비 서브없는 디자인형</title>
     <style>
         /* 타이틀 */
-        .tit{
+        .tit {
             text-align: center;
             /* 예전엔 그라데이션은 모두 이미지로 제작함
             CSS3부터 그라데이션을 코딩으로 표현하도록 지원됨 */
-            background-image: 
-            linear-gradient(45deg,red,green 30%,yellow 40%,yellow 80%,blue);
+            background-image:
+                linear-gradient(45deg, red, green 30%, yellow 40%, yellow 80%, blue);
 
             padding: 10px;
         }
@@ -23,40 +23,48 @@
             width: 50px;
             height: 50px;
             border: 1px solid #000;
-            border-radius: 50%;/* 원 */
+            border-radius: 50%;
+            /* 원 */
             vertical-align: -14px;
             /* 인라인 요소간 세로정렬 */
 
-            background-image: 
-            radial-gradient(farthest-side at 30px 15px,#fff,blue);
+            background-image:
+                radial-gradient(farthest-side at 30px 15px, #fff, blue);
         }
 
         /* GNB 메뉴 박스 */
         .gnb {
             width: 900px;
             height: 40px;
-            margin: 0 auto;/* 마영오! */
+            margin: 0 auto;
+            /* 마영오! */
         }
-        .gnb>ul{ /* 3無 */
+
+        .gnb>ul {
+            /* 3無 */
             margin: 0;
             padding: 0;
             list-style: none;
         }
+
         /* 가상요소 clear */
         .gnb>ul::after {
             content: '';
             display: block;
             clear: both;
         }
+
         .gnb li {
-            float: left;/* 옆으로 흐르게 */
+            float: left;
+            /* 옆으로 흐르게 */
             width: 150px;
             height: 40px;
             box-sizing: border-box;
             /* 보더,패딩 내부포함 크기유지 */
         }
+
         /* li사이 구분선 넣기 - 왼쪽보더를 첫번째만 빼고 모두넣음*/
-        .gnb li+li{
+        .gnb li+li {
             border-left: 1px solid #777;
         }
 
@@ -65,6 +73,7 @@
             border-radius: 5px 0 0 5px;
             /* border-radius: 왼위 오른위 오른아래 왼아래; */
         }
+
         /* 둥근 모서리 설정 마지막째 li의 a */
         .gnb li:last-child a {
             border-radius: 0 5px 5px 0;
@@ -99,15 +108,16 @@
             text-shadow: 1px 1px 0 #ccc;
 
             /* 배경이미지 그라데이션 */
-            background-image: 
-            linear-gradient(to bottom, #6d6d6d,#d6d6d6);
+            background-image:
+                linear-gradient(to bottom, #6d6d6d, #d6d6d6);
         }
+
         /* 메뉴 li에 오버시 
         a요소의 글자색, 배경색, 글자그림자 변경 */
-        .gnb li:hover a{
+        .gnb li:hover a {
             color: #fff;
-            background-image: 
-            linear-gradient(to top, #6d6d6d,#d6d6d6);
+            background-image:
+                linear-gradient(to top, #6d6d6d, #d6d6d6);
             /* 그라데이션 방향만 반대로(to top) */
             text-shadow: 0 1px 0 #777;
         }
@@ -160,7 +170,7 @@
 
 <body>
     <h1 class="tit">
-        <span class="circ"></span> 
+        <span class="circ"></span>
         유형7 : 가로네비 서브없는 디자인형
     </h1>
     <nav class="gnb">

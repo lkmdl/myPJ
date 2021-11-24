@@ -10,10 +10,12 @@
             /* a요소로 #위치 이동시 스크롤 애니메이션 설정 */
         }
 
-        html,body {
+        html,
+        body {
             margin: 0;
             padding: 0;
         }
+
         body {
             /* background: 색이반고윙/크; */
             background: url(./images/bg.jpg) no-repeat fixed top/cover;
@@ -26,7 +28,7 @@
         } */
 
         /* 로봇 페이지 로고 */
-        h1#logo{
+        h1#logo {
             position: fixed;
             top: calc(50% - 100px);
             left: calc(50% - 100px);
@@ -36,7 +38,8 @@
             width: 200px;
             height: 200px;
             border: 2px solid #ccc;
-            border-radius: 50%;/* 원 */
+            border-radius: 50%;
+            /* 원 */
 
             margin: 0;
             /* h1요소의 기본마진 반드시 없앨것 */
@@ -68,7 +71,7 @@
             background-position: center 10px;
             /* 배경위치: 가로 세로 */
             background-size: 140px;
-            
+
             /* 처음에 로고 2배 크기 보이게함 */
             transform: scale(2);
             /* 애니메이션: 이시이지반방마 */
@@ -80,6 +83,7 @@
 
         /* 로봇 페이지 로고 키프레임 */
         @keyframes logoAni {
+
             /* 시작값은 초기 시작값과 같아서 from(0%) 생략 */
             80% {
                 top: 50px;
@@ -223,6 +227,7 @@
             height: 50px;
             background: url(./images/e2.jpg) no-repeat 0/100% 100%;
         }
+
         /* 코 */
         #nose {
             position: absolute;
@@ -233,6 +238,7 @@
             height: 70px;
             background: url(./images/nose.jpg) no-repeat 0/110% 100%;
         }
+
         /* 입 */
         #mouth {
             position: absolute;
@@ -253,6 +259,7 @@
             height: 80px;
             background: url(./images/metal02.jpg) no-repeat 0/100% 100%;
         }
+
         /* 왼쪽귀 */
         #ear1 {
             left: -42px;
@@ -483,10 +490,12 @@
             font-size: 40px;
             text-shadow: 2px 2px 2px #000;
         }
+
         .link a {
             color: #fff;
             text-decoration: none;
         }
+
         /* 오버시 */
         .link a:hover {
             color: #f00;
@@ -512,6 +521,7 @@
             font-weight: bold;
             text-decoration: none;
         }
+
         /* 버튼에 오버시 */
         .btnTop:hover {
             background-color: #ff0;
@@ -520,7 +530,7 @@
 
         /* 처음에 투명처리 class */
         .fade {
-            
+
             opacity: 0;
             /*
                 opacity - 요소의 투명도 조절
@@ -529,19 +539,21 @@
                 예) opacity: 0.5 -> 반투명
              */
 
-        /* 이지이시 반방마 */
-        animation: opa .7s ease-in 7s forwards;
+            /* 이지이시 반방마 */
+            animation: opa .7s ease-in 7s forwards;
         }
 
-            /* 투명도 변화 키프레임 */
-            @keyframes opa {
-                to {
-                    opacity: 1;
-                }
-            }/* 키프레임 */
+        /* 투명도 변화 키프레임 */
+        @keyframes opa {
+            to {
+                opacity: 1;
+            }
+        }
 
+        /* 키프레임 */
     </style>
 </head>
+
 <body>
 
     <!-- 로봇 페이지 로고 -->

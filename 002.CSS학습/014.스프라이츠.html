@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>CSS심화 - Sprites, IR</title>
     <style>
-        .icons{
+        .icons {
             /* 3無 */
             margin: 0;
             padding: 0;
@@ -16,6 +16,7 @@
 
             outline: 1px solid red;
         }
+
         .icons li {
             width: 128px;
             height: 128px;
@@ -28,28 +29,34 @@
 
             outline: 1px dotted blue;
         }
+
         /* 트위터 */
-        .icons li:nth-child(1){
+        .icons li:nth-child(1) {
             background-position: 0 0;
         }
+
         /* 트위터 오버시 */
-        .icons li:nth-child(1):hover{
+        .icons li:nth-child(1):hover {
             background-position: 0 -128px;
         }
+
         /* 인스타 */
-        .icons li:nth-child(2){
+        .icons li:nth-child(2) {
             background-position: -128px 0;
         }
+
         /* 인스타 오버시 */
-        .icons li:nth-child(2):hover{
+        .icons li:nth-child(2):hover {
             background-position: -128px -128px;
         }
+
         /* 페북 */
-        .icons li:nth-child(3){
+        .icons li:nth-child(3) {
             background-position: -256px 0;
         }
+
         /* 페북 오버시 */
-        .icons li:nth-child(3):hover{
+        .icons li:nth-child(3):hover {
             background-position: -256px -128px;
         }
 
@@ -129,10 +136,10 @@
                 ChromeVox Classic Extension
             
             ***********************************************/
-            
+
         /* IR 숨기기 class */
         /* 주의- display:none 으로 숨기면 리더기가 못읽는다!*/
-        .ir{
+        .ir {
             display: block;
             width: 0;
             height: 0;

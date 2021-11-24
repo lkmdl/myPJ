@@ -106,6 +106,7 @@
         .gnb:hover>ul>li .smenu {
             height: 250px;
         }
+
         /* 서브메뉴 전체배경 가상요소로 만들기 */
         .gnb::after {
             content: '';
@@ -121,16 +122,16 @@
             /* 트랜지션: 속시이지 */
             transition: height .4s ease-out;
         }
+
         /*  GNB박스에 오버시 가상요소 높이값 변경 */
-        .gnb:hover::after{
+        .gnb:hover::after {
             height: 250px;
         }
+
         /* GNB박스에 오버시 GBB박스 배경색 변경 */
-        .gnb:hover{
+        .gnb:hover {
             background-color: 006efd;
         }
-
-
     </style>
 </head>
 

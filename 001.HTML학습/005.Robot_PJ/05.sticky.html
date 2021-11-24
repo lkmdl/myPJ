@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>Position - sticky</title>
     <style>
-        div{
+        div {
             width: 100px;
             height: 100px;
             border: 2px solid blue;
@@ -15,11 +16,12 @@
             /* 글자세로 중앙을 줄간격으로 적용!
             박스 높이값과 같은 줄간격을 주면 세로중앙에 글자옴 */
         }
-        #stk1{
+
+        #stk1 {
             position: sticky;
             top: 105px;
             width: 30%;
-            background-color:tomato;
+            background-color: tomato;
             z-index: 999;
 
             /* 
@@ -34,7 +36,7 @@
             */
         }
 
-        #f1{
+        #f1 {
             position: fixed;
             top: 0;
             left: 0;
@@ -42,12 +44,12 @@
             background-color: rgba(255, 255, 0, 0.446);
         }
 
-        #f2{
+        #f2 {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color:gainsboro;
+            background-color: gainsboro;
         }
 
         #a1 {
@@ -57,7 +59,7 @@
             background-color: orange;
         }
 
-        #r1{
+        #r1 {
             position: relative;
             top: 50px;
             left: 50px;
@@ -66,40 +68,46 @@
 
             background-color: red;
         }
-        #r2{
+
+        #r2 {
             position: relative;
             left: 70px;
 
             background-color: skyblue;
         }
-        #s2{
+
+        #s2 {
             background-color: green;
         }
-        #s3{
+
+        #s3 {
             background-color: yellow;
         }
 
         /* 부모찾는 앱솔루트 */
-        .bx{
+        .bx {
             width: auto;
             height: auto;
             padding: 50px;
         }
 
-        .s5{
-            position: relative;
-        }
-        .s6{
-            position: relative;
-        }
-        .s7{
-            position: relative;
-        }
-        .s8{
+        .s5 {
             position: relative;
         }
 
-        .a2{
+        .s6 {
+            position: relative;
+        }
+
+        .s7 {
+            position: relative;
+        }
+
+        .s8 {
+            position: relative;
+        }
+
+        .a2 {
             position: absolute;
             top: 0;
             left: 0;
@@ -113,27 +121,28 @@
             line-height: normal;
             background-color: red;
         }
-        .a3{
+
+        .a3 {
             position: absolute;
             bottom: 0;
             right: 0;
             /* 나의 부모는 누구인가? */
             background-color: pink;
         }
+
         /* span 앱솔루트 */
-        .sa{
+        .sa {
             position: absolute;
             top: 0;
             right: 0;
             /* 나의 부모는 누구인가? */
             /* 나는 inline인데 block이 되었는가? */
-            
+
             border: 4px dotted orangered;
         }
-
-
     </style>
 </head>
+
 <body>
     <div id="r1">r1</div>
     <div id="s2">s2</div>
@@ -156,6 +165,7 @@
             </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>

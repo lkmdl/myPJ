@@ -29,7 +29,8 @@
 
         /* GNB 메뉴 */
         .gnb {
-            width: 200px; /* 유형5. 변경 */
+            width: 200px;
+            /* 유형5. 변경 */
             background-color: #006efd;
         }
 
@@ -79,13 +80,18 @@
 
         /* 서브메뉴 */
         .smenu {
-            position: absolute; /* 유형변경.5 */
-            top: 0; /* top위치는 부모 li에 맞춘다 */
-            left: 100%;/* left위치는 부모 li만큼 오른쪽 위치 */
+            position: absolute;
+            /* 유형변경.5 */
+            top: 0;
+            /* top위치는 부모 li에 맞춘다 */
+            left: 100%;
+            /* left위치는 부모 li만큼 오른쪽 위치 */
             /*.gnb>li가 부모로써 위치써 위치를 잡는다*/
             width: 200px;
-            height: 0; /* 높이값 없앰 */
-            overflow: hidden;  /* 넘치는 자식요소 숨기기 */
+            height: 0;
+            /* 높이값 없앰 */
+            overflow: hidden;
+            /* 넘치는 자식요소 숨기기 */
 
             background-color: lightskyblue;
 
@@ -104,6 +110,7 @@
         .gnb>ul>li:nth-child(2):hover .smenu {
             height: 200px;
         }
+
         /* 3번째 상위메뉴 li -> 서브메뉴 높이값 100px */
         .gnb>ul>li:nth-child(3):hover .smenu {
             height: 100px;

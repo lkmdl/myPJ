@@ -2,14 +2,14 @@
 <html>
 
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>네이버 요약뉴스 - 메인</title>
-<!-- style요소: 스타일 시트 영역 태그 -->
-<!-- [ 인터널방식의 CSS ] -->
-<style>
-/* css주석 */
-/*
+    <title>네이버 요약뉴스 - 메인</title>
+    <!-- style요소: 스타일 시트 영역 태그 -->
+    <!-- [ 인터널방식의 CSS ] -->
+    <style>
+        /* css주석 */
+        /*
 css형식
 
 요소명{
@@ -17,173 +17,173 @@ css형식
 }
 */
 
-.wrap {
-width: 727px;
-margin: 0 auto;
-/* 블록박스 가로중앙! */
-}
+        .wrap {
+            width: 727px;
+            margin: 0 auto;
+            /* 블록박스 가로중앙! */
+        }
 
-/* 텍스트 중앙 class */
-.tac {
-text-align: center;
-}
+        /* 텍스트 중앙 class */
+        .tac {
+            text-align: center;
+        }
 
-/* 배경색 class */
-.bgc {
-background-color: aliceblue;
-padding: 10px 0;
-/* 안쪽여백: 위아래 양쪽 */
-}
+        /* 배경색 class */
+        .bgc {
+            background-color: aliceblue;
+            padding: 10px 0;
+            /* 안쪽여백: 위아래 양쪽 */
+        }
 
-/* 큰제목 */
-h1#mtit {
-color: chartreuse;
-text-indent: 2px 2px 2px #888;
-}
+        /* 큰제목 */
+        h1#mtit {
+            color: chartreuse;
+            text-indent: 2px 2px 2px #888;
+        }
 
-/* 메인 공통 p요소 */
-main p {
-line-height: 1.7;
-font-size: 17px;
-}
+        /* 메인 공통 p요소 */
+        main p {
+            line-height: 1.7;
+            font-size: 17px;
+        }
 
 
-/* 1. 타입선택자(요소명) */
-address {
-font-style: normal;
-/* 글자스타일 */
-color: green;
-/* 글자색 */
-font-size: 14px;
-/* 글자크기 */
-line-height: 20px;
-/* 줄간격 */
-}
+        /* 1. 타입선택자(요소명) */
+        address {
+            font-style: normal;
+            /* 글자스타일 */
+            color: green;
+            /* 글자색 */
+            font-size: 14px;
+            /* 글자크기 */
+            line-height: 20px;
+            /* 줄간격 */
+        }
 
-/* 2. 자손선택자(띄어쓰기) */
-header a {
-color: #ff6347;
-/* 글자색 */
-text-decoration: none;
-/* 밑줄없앰 */
-}
+        /* 2. 자손선택자(띄어쓰기) */
+        header a {
+            color: #ff6347;
+            /* 글자색 */
+            text-decoration: none;
+            /* 밑줄없앰 */
+        }
 
-/* 3. 직계자식선택자(>) */
-main>a {
-color: indigo;
-/* 글자색 */
-text-decoration: none;
-/* 밑줄없앰 */
-font-size: 20px;
-/* 글자크기 */
-text-shadow: 1px 1px 1px #000;
-;
-/* 글자그림자: x y blur 색 */
-}
+        /* 3. 직계자식선택자(>) */
+        main>a {
+            color: indigo;
+            /* 글자색 */
+            text-decoration: none;
+            /* 밑줄없앰 */
+            font-size: 20px;
+            /* 글자크기 */
+            text-shadow: 1px 1px 1px #000;
+            ;
+            /* 글자그림자: x y blur 색 */
+        }
 
-main>p>q {
-color: white;
-background-color: black;
-}
+        main>p>q {
+            color: white;
+            background-color: black;
+        }
 
-/* 4. 아이디 선택자(#) */
-#logo {
-vertical-align: -4px;
-/* 인라인요소간 세로정렬 */
-margin-right: 3px;
-/* 오른쪽 마진 */
-}
+        /* 4. 아이디 선택자(#) */
+        #logo {
+            vertical-align: -4px;
+            /* 인라인요소간 세로정렬 */
+            margin-right: 3px;
+            /* 오른쪽 마진 */
+        }
 
-/* 5. 클래스 선택자(.) */
-.tit {
-text-align: center;
-font-family: "궁서체";
-/* 글씨체 */
-font-size: 30px;
-/* 글씨크기 */
-letter-spacing: 0;
-/* 자간 */
-word-spacing: 0;
-/* 단어사이 */
-/* white-space: nowrap; */
-/* 줄바꿈 금지 */
-}
+        /* 5. 클래스 선택자(.) */
+        .tit {
+            text-align: center;
+            font-family: "궁서체";
+            /* 글씨체 */
+            font-size: 30px;
+            /* 글씨크기 */
+            letter-spacing: 0;
+            /* 자간 */
+            word-spacing: 0;
+            /* 단어사이 */
+            /* white-space: nowrap; */
+            /* 줄바꿈 금지 */
+        }
 
-/* 6. 그룹 선택자(,) */
-em,
-i {
-color: gold;
-}
+        /* 6. 그룹 선택자(,) */
+        em,
+        i {
+            color: gold;
+        }
 
-/* 7. 종속선택자(요소명+아이디명/클래스명)  */
-h3#tit3 {
-display: inline;
-/*화면표시방식 : 블록->인라인*/
-border: 2px dotted tomato;
-/* border: 두께 종류 색상 */
-padding: 5px;
-/* 안쪽여백 */
-}
+        /* 7. 종속선택자(요소명+아이디명/클래스명)  */
+        h3#tit3 {
+            display: inline;
+            /*화면표시방식 : 블록->인라인*/
+            border: 2px dotted tomato;
+            /* border: 두께 종류 색상 */
+            padding: 5px;
+            /* 안쪽여백 */
+        }
 
-/* 종속선택자 class인 경우 */
-.list {
-border: 2px dashed blue;
-}
+        /* 종속선택자 class인 경우 */
+        .list {
+            border: 2px dashed blue;
+        }
 
-ul.list {
-background-color: whitesmoke;
-}
+        ul.list {
+            background-color: whitesmoke;
+        }
 
-ol.list {
-background-color: burlywood;
-}
+        ol.list {
+            background-color: burlywood;
+        }
 
-/* 8.속성선택자 ([]) */
-/* 속성선택시 이퀄을 쓰는 방법
+        /* 8.속성선택자 ([]) */
+        /* 속성선택시 이퀄을 쓰는 방법
 1. "=" 정확히 같은 값을 찾음
 2. "^=" 시작하는 문자를 찾음(웃으면서 시작!)
 3. $= 끝나는 문자(돈받고 끝나라!)
 4. *= 모두찾음(별은 하늘에 모두 봄!)        
 */
-[alt="gogh"] {
-border: 30px ridge gold;
-}
+        [alt="gogh"] {
+            border: 30px ridge gold;
+        }
 
-/* ^= 시작하는 문자 */
-[href^="http"] {
-background-color: lime;
-}
+        /* ^= 시작하는 문자 */
+        [href^="http"] {
+            background-color: lime;
+        }
 
-/* $= 끝나는 문자 */
-[href$="RANKING"] {
-color: darkturquoise;
-font-weight: bold;
-}
+        /* $= 끝나는 문자 */
+        [href$="RANKING"] {
+            color: darkturquoise;
+            font-weight: bold;
+        }
 
-/* *= 있기만 하면 모두 찾음 */
-/*  ::after 가상요소(맨뒤) */
-[href*="news"]::after {
-content: '🔴';
-}
+        /* *= 있기만 하면 모두 찾음 */
+        /*  ::after 가상요소(맨뒤) */
+        [href*="news"]::after {
+            content: '🔴';
+        }
 
-/* 9. 형제 선택자(+) */
-/* ::before 가상요소(맨앞) */
-li+li::before {
-/* 앞에 li형제가 있는 li요소를 선택 */
-content: '🟧';
-}
+        /* 9. 형제 선택자(+) */
+        /* ::before 가상요소(맨앞) */
+        li+li::before {
+            /* 앞에 li형제가 있는 li요소를 선택 */
+            content: '🟧';
+        }
 
-/* 10. 다중형제선택자(~)틸드 */
-.tt~p {
-/* 클래스가 tt인 요소 뒤의 p형제요소 모두를 선택 */
-background-color: lightpink;
-}
+        /* 10. 다중형제선택자(~)틸드 */
+        .tt~p {
+            /* 클래스가 tt인 요소 뒤의 p형제요소 모두를 선택 */
+            background-color: lightpink;
+        }
 
-/* 테이블 첫번째 tr의 첫번째 td에 width 주기 */
-.wd {
-width: 250px;
-}
-</style>
+        /* 테이블 첫번째 tr의 첫번째 td에 width 주기 */
+        .wd {
+            width: 250px;
+        }
+    </style>
 
 <body>
     <div class="wrap">
@@ -196,9 +196,7 @@ width: 250px;
             <!-- 1.2.메뉴 -->
             <nav>
                 <a href="index.html">
-                    <img src="images/naverLog.png"
-                    alt="naverLog" style="width: 20px;"
-                    id="logo">
+                    <img src="images/naverLog.png" alt="naverLog" style="width: 20px;" id="logo">
                     <!-- style속성: css셋팅값적용 -->
                 </a>
                 <a href="sub1.html">정치</a> |
@@ -224,7 +222,7 @@ width: 250px;
                 국민의힘 이준석 대표(왼쪽)와 김재원 최고위원. 김 최고위원이 지난 8일 ‘2030 탈당 숫자는 40명에 불과하다“고 하자 이 대표는 즉각 ”1800명에 달한다“며 ”2030을 조롱하지
                 말라“고 경고했다. © News1
             </small>
-            
+
             <figure>
                 <!-- 
                     figure요소: 이미지나 표 등을 넣는 박스요소
@@ -443,7 +441,7 @@ width: 250px;
 
             <hr>
 
-            
+
             <hr>
             <bdo dir="rtl">가나다라마바사아자차카타파하</bdo>
 
@@ -452,7 +450,7 @@ width: 250px;
             <img src="./images/gogh.jpg" alt="gogh">
             <br>
             gogh의&lt;<cite>자화상</cite>&gt;
-            
+
             <footer class="bgc">
                 <hr>
                 <address>
@@ -460,8 +458,8 @@ width: 250px;
                     CEO: choi <br>
                     Tel: 010-3292-0681
                 </address>
-                
-<!--
+
+                <!--
 [ HTML 핵심 요소들 - 페이지에 단 한번만 등장! ]
 1.html: 최상위 부모
 2.head: 기본정보영역
@@ -479,7 +477,7 @@ div를 구체적인 내용으로 변경한 형제들이다!
 (시멘틱태그-유의미한 요소)
 -->
 
-<!--
+                <!--
 [ 서식관련 태그들 ]
 
 <b> - 굵은 텍스트(bold)

@@ -85,7 +85,8 @@
             position: absolute;
             /* 위치이동값 없는 앱솔루트는 젠틀하다!
              젠틀앱솔루트!!! */
-            left: calc(50% - 400px);/* 유형2-2변경 */
+            left: calc(50% - 400px);
+            /* 유형2-2변경 */
             /* 부모의 왼쪽에서 50%밀고 자기크기의 절반을 빼서
             정중앙에 위치함! */
             /* 
@@ -136,6 +137,7 @@
         .gnb>ul>li:nth-child(2) .smenu li:first-child {
             margin-left: 200px;
         }
+
         .gnb>ul>li:nth-child(3) .smenu li:first-child {
             margin-left: 400px;
         }
@@ -161,23 +163,20 @@
             left: 0;
             /* 부모는? .gnb */
             width: 100%;
-            height: 0;/* 처음에 안보임! */
+            height: 0;
+            /* 처음에 안보임! */
             background-color: lightskyblue;
 
             /* 트랜지션: 속시이지 -> 서브메뉴와 동일! */
             transition: height .4s ease-out;
         }
+
         /* 상위 li 두번째, 세번째 오버시 서브배경보이기 */
         .gnb>ul>li:nth-child(2):hover::after,
         .gnb>ul>li:nth-child(3):hover::after {
             height: 50px;
             border-bottom: 2px solid blue;
         }
-
-
-
-
-
     </style>
 </head>
 
