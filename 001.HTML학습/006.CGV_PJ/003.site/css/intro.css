@@ -81,7 +81,8 @@ body {
 @media screen and (max-width:600px) {
 
     #enter span {
-        font-size: 8vw;
+        font-size: 6vw;
+        
     }
 }
 
