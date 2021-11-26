@@ -3,11 +3,14 @@
 
 /* 1300px 이하 #######################################################*/
 @media screen and (max-width: 1300px) {
+
     /* gnb 메뉴 위치이동 - 영사기가 보이게 */
     .gnb {
         right: 63px;
-    }     
-}/* 1300px 이하 #######################################################*/
+    }
+}
+
+/* 1300px 이하 #######################################################*/
 
 /* 1050px 이하 #######################################################*/
 @media screen and (max-width: 1050px) {
@@ -19,15 +22,16 @@
         /* 오버시 끊어지지 않게 패딩탑으로 밀기 */
         text-align: right;
         display: none;
-    }     
+    }
+
     /* glist 메뉴 숨기기 - 영사기는 살아있음 */
     /* 상위메뉴 li는 float해제 */
-    ul.glist>li{
+    ul.glist>li {
         float: none;
     }
 
     /* gnb에 마우스 오버시 .glist메뉴 보이기 */
-    .glist:hover .smenu{
+    .glist:hover .smenu {
         display: block;
     }
 
@@ -35,27 +39,128 @@
     .glist>li:hover .smenu {
         display: none;
     }
-    
 
-}/* 1050px 이하 #######################################################*/
+    /* 1.타이틀 글자크기 */
+    h1.tit {
+        font-size: 30px;
+    }
+
+
+
+}
+
+/* 1050px 이하 #######################################################*/
 
 
 
 /* 780px 이하 #######################################################*/
 @media screen and (max-width: 780px) {
+
     /* 하단영역 배치 변경하기 */
     #info {
         height: auto;
         text-align: center;
     }
+
     #info img {
         display: block;
         float: none;
         margin: 10px auto;
     }
+
     .sns {
         position: static;
         margin: 10px auto;
         width: 114px;
     }
-/* 780px 이하 #######################################################*/
+
+    /***************** 1050px 이하 끝 *****************/
+
+    /***************** 780px 이하 시작 *****************/
+    @media screen and (max-width:780px) {
+
+        /* 하단영역 배치 변경하기 */
+        #info {
+            height: auto;
+            text-align: center;
+        }
+
+        #info img {
+            float: none;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .sns {
+            position: static;
+            margin: 10px auto;
+            width: 114px;
+        }
+
+    }
+
+    /***************** 780px 이하 끝 *****************/
+
+
+    /******************** 모바일파트 ********************/
+
+    /***************** 600px 이하 시작 *****************/
+    @media screen and (max-width:600px) {
+
+        /* 1. 타이틀 글자크기 */
+        h1.tit {
+            font-size: 30px;
+        }
+
+        /* 2. 메인영역 - 상단과 하단을 뺀 나머지 높이설정 */
+        .rbx::before {
+            padding-top: calc(100vh - 230px);
+            /* 보이는 화면높이 100% 에서 
+        상단(80px)+하단(150px)을 뺀 나머지 높이설정 */
+        }
+
+        /* 3. 메인박스 배경 */
+        #cont {
+            background-size: 500px;
+            background-position: center top;
+        }
+
+        /* 4. 스크린 크기, 위치 맞추기 */
+        #screen {
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* 가로중앙이동 */
+            width: 299px;
+            height: 167px;
+        }
+
+        /* 5.예고편 선택메뉴 박스 */
+        .mlist {
+            width: 100%;
+        }
+
+        /* 6. 영화정보박스 */
+        .movtxt {
+            font-size: 2vw;
+            line-height: 4vw;
+        }
+
+        /* 7. 첫번째 li는 영화제목 */
+        .movtxt li:first-child {
+            font-size: 3vw;
+            margin-top: 4vw;
+        }
+
+        /* 8. 하단영역 - 150px */
+        #info {
+            height: 150px;
+        }
+
+        /* 9. 하단주소만 없애기 */
+        #info address span {
+            display: none;
+        }
+    }
+
+    /***************** 600px 이하 끝 *****************/
