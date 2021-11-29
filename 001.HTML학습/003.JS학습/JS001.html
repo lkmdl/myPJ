@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,17 +47,17 @@
             (콘솔 - 브라우저 엔진에서 관할하는 내부출력모드)
          *********************************************/
 
-        // 출력확인1
-        // document.write("<h1>나는 프론트엔드 개발자다!</h1>");
+                // 출력확인1
+                // document.write("<h1>나는 프론트엔드 개발자다!</h1>");
 
-        // 출력확인2
-        // alert("그러냐? 개발자냐?");
-        // html 태그를 브라우저화면에 랜더링하기 전에 먼저작동함!
+                // 출력확인2
+                // alert("그러냐? 개발자냐?");
+                // html 태그를 브라우저화면에 랜더링하기 전에 먼저작동함!
 
-        // 출력확인3
-        // console.log("추카드립니다! 짝짝짝!");
-        // 콘솔로그는 콘솔창에서 확인한다
-        // (F12개발자모드의 Console 탭메뉴 클릭!)
+                // 출력확인3
+                // console.log("추카드립니다! 짝짝짝!");
+                // 콘솔로그는 콘솔창에서 확인한다
+                // (F12개발자모드의 Console 탭메뉴 클릭!)
 
 
         /************************************************** 
@@ -70,7 +71,7 @@
                 호출시에만 코드를 실행하는 코드저장공간
                 - 형식: function 함수명(전달변수){코드}
                 - 호출: 함수명(값) 
-                    (값은 함수의 변수개수만큼 보냄)
+                (값은 함수의 변수개수만큼 보냄)
                 ____________________________________
                 [ JS의 이벤트란? ]
                 - 브라우저에서 실행되는 입력관련 시점을
@@ -111,15 +112,15 @@
                 [ JS의 코드 마무리는 세미콜론;;;;;;;; ]
                 - JS의 코드 끝에는 세미콜론으로 마무리한다!
                 - 세미콜론이 안붙는 경우 : 
-                                선언적함수끝, 제어문끝
+                선언적함수끝, 제어문끝
                 (참고: 자동세미콜론삽입 기능
-                    ASI(Automatic Semicolon Insertion)
-                    - 브라우저가 세미콜론을 필요한 부분에
-                    구문분석을 하여 자동으로 세미콜론을
-                    프로그램 실행전에 넣어주는 기능이 있다!
-                    - 주의사항: 편리할 수 있지만 자동 구문분석시
-                    오류분석이 있을 수 있으므로 개발자가 직접
-                    세미콜론을 넣어주는 것을 추천함!!!
+                ASI(Automatic Semicolon Insertion)
+                - 브라우저가 세미콜론을 필요한 부분에
+                구문분석을 하여 자동으로 세미콜론을
+                프로그램 실행전에 넣어주는 기능이 있다!
+                - 주의사항: 편리할 수 있지만 자동 구문분석시
+                오류분석이 있을 수 있으므로 개발자가 직접
+                세미콜론을 넣어주는 것을 추천함!!!
                 )
                 _______________________________________
                 [ JS에서 요소를 선택하는 방법! ]
@@ -136,38 +137,7 @@
                 -> html요소 중 아이디요소는 유일하므로
                 한번에 선택가능!
                 
-                - 메서드 이름분석
-                get -> 가져와라!
-                Element -> 요소 하나를
-                By Id -> 아이디에 의한 것으로!
-                __________________________________
-                2. 클래스요소 선택법 :
-                getElementsByClassName() 메서드
-                - html요소 중 클래스는 여러개 올 수 
-                있기때문에 컬렉션집합을 만들어서
-                관리하기 때문에 선택시 순번을 써야함!
-                -> .item(순번) 또는 [순번]
-                -> 순번은 0부터셈!
-                - 메서드 이름분석
-                get -> 가져와라!
-                Elements -> 요소들을
-                By Class Name -> 클래스 이름에 의한 것으로
-                예) 해당 클래스명을 가진 요소 중 첫번째것
-                document
-                .getElementsByClassName(클래스명)
-                .item(0)
-                또는
-                document
-                .getElementsByClassName(클래스명)[0]
-                __________________________________
-                2. 태그요소 선택법 :
-                getElementsByTagName() 메서드
-                - html요소 중 태그는 여러개 올 수 
-                있기때문에 컬렉션집합을 만들어서
-                관리하기 때문에 선택시 순번을 써야함!
-                -> .item(순번) 또는 [순번]
-                -> 순번은 0부터셈!
-                - 메서드 이름분석
+                 - 메서드 이름분석
                 get -> 가져와라!
                 Elements -> 요소들을
                 By Tag Name -> 태그 이름에 의한 것으로
@@ -179,9 +149,62 @@
                 document
                 .getElementsByTagName(태그명)[0]
                 __________________________________
+                [ CSS 선택자를 그대로 사용하는 선택법! ]
+                1. 하나의 요소 선택법
+                querySelector(CSS선택자)
+                -> 선택요소가 여러개여도 처음 만나는 요소
+                단 하나만을 선택한다!
+                따라서 몇번째라는 부가선택이 불필요!
+                예)
+                document.querySelector("#my")
+                -> 아이디가 my인 요소
+                document.querySelector(".say")
+                -> 클래스가 say인 요소(만나는 첫번째 .say)
+                document.querySelector("ul>li")
+                -> ul 직계자식 li중 첫번째요소
+                => 이렇게 선택하는게 간단해서 인기많음!
+                왜???? 예컨데 아래 선택을 일반선택법으로 하면...
+                document.querySelector("ul>li")
+                ****************************
+                document.getElementsByTagName("ul").item(0)
+                .getElementsByTagName("li").item(0)
+                => 매우 길고 선택이 불편하다!!! 못쓰겠다!!!
+                -> 매서드명 분석
+                - query 쿼리 -> 질의(기술적인질문)
+                - Selector 선택자 -> CSS선택자
+                -> 브라우저에게 CSS선택자로 질의를 한다!
+                그러면 요소를 선택한다!
+                _____________________________
+                2. 여러개의 요소를 선택하는 방법
+                querySelectorAll(CSS선택자)
+                -> 선택시 컬렉션집합에 결과를 담는다!
+                -> 따라서 요소가 하나일지라도 순번으로 선택한다!
+                (1) 순번선택법
+                .item(순번) 또는 [순번]
+                -> 순번은 0부터
+                예) 
+                document
+                .querySelectorAll(".my>li")
+                .item(3) -> 4번째 li를 선택함!
+                또는
+                document
+                .querySelectorAll(".my>li")[3]
+                -> 4번째 li를 선택함!
+                (2) 요소개수 알아오기! : length
+                querySelectorAll(CSS선택자).length
+                -> 개수를 읽어올 수 있다!
+                예)
+                document.querySelectorAll(".my").length
+                -> 만약 .my요소가 7개라면 결과로 7이 나온다!
+                ____________________________________________
                 [ JS에서 요소 선택 후 html변경하기 ]
                 선택요소.innerHTML = html코드
                 -> 선택요소 내부의 자식으로 html코드를 넣는다!
+                _____________________________________
+                [ JS에서 요소 선택 후 Text넣기 ]
+                
+                선택요소.innerText = 넣을문구
+                -> 선택요소 내부 데이터로 텍스트가 들어감!
                 ____________________________________
                 [ JS에서 요소 선택 후 CSS 변경하기 ]
                 선택요소.style.스타일시트속성명 = 속성값
@@ -210,7 +233,7 @@
             함수명: showMe
             기능: .pbox의 디자인을 변경한다!
         ****************************************/
-        function showMe(){
+        function showMe() {
 
             // 1. 함수호출확인
             console.log("나야나!!!");
@@ -219,10 +242,10 @@
             // 변경대상: #name
             // 변경내용: html 이미지넣기
             document
-            // 현재문서전체
-            .getElementById("name")
-            // 특정아이디요소 가져오기
-            .innerHTML = '<img src="images/kim.png" alt="김비서가 왜그럴까">';
+                // 현재문서전체
+                .getElementById("name")
+                // 특정아이디요소 가져오기
+                .innerHTML = '<img src="images/kim.png" alt="김비서가 왜그럴까">';
             // html요소를 넣는 속성
             // 이퀄 오른쪽의 데이터가 왼쪽으로 들어감(할당!)
 
@@ -231,8 +254,8 @@
             // 대상을 변수에 담아서 재사용한다!
 
             // 클래스를 변수에 담는다!
-            var tg = 
-            document.getElementsByClassName("pbox").item(0);
+            var tg =
+                document.getElementsByClassName("pbox").item(0);
             // var는 variable(변수)에서 나온말. 변수선언시 사용
 
             // (1) 글자색 변경하기
@@ -244,13 +267,97 @@
             // (3) 트랜지션주기
             tg.style.transition = "2s";
 
+            // (4) 배경이미지 넣기
+            tg.style.background = "url(./images/kimbs.jpg) no-repeat top/cover";
 
+            // (5) 원모양 만들기
+            tg.style.borderRadius = "50%";
+
+            // (6) 글자 중앙정렬
+            tg.style.textAlign = "center";
+
+            // (7) 줄간격
+            tg.style.lineHeight = "300px"
+
+            // (8) 정중앙 보내기 + 트랜스톰(이동)
+            tg.style.top = "50%";
+            tg.style.left = "50%";
+
+            // (9) 트랜스폼 : 중앙이동
+            tg.style.transform =
+            "translate(-50%,-50%) rotate(360deg) scale(.7)";
+
+            // (10) 전체배경색 변경하기
+            // 대상: body
+            // JS에서 body는 특별히 취급하여
+            // document.body 라고 선택함
+            var bd = document.body;
+
+            bd.style.backgroundColor = "orange";
+            bd.style.transition = "5s";
+            
         } ///////////// showMe 함수 ////////////////
         ///////////////////////////////////////////
 
+        /******************************************** 
+            함수명:circle
+            기능:선택요소를 중앙으로 보낸다
+        *********************************************/
+       function circle(num){
+
+           //1. 함수호출확인
+           console.log("나 서클"+num)
+
+           //2. 대상선정: .circle
+           var cc = document.querySelectorAll(".circle");
+           console.log("선택요소개수:"+cc.length);
+
+           //3. 변경내용: 트랜지션으로화면중앙으로 이동하기
+           cc.item(num).style.transition = "1s ease-out";
+           cc.item(num).style.top = "50%";
+           cc.item(num).style.right = "50%";
+           cc.item(num).style.transform = "translate(50%,-50%";
+
+        }///////////// circle 함수//////////////////
+        ///////////////////////////////////////////
+
+        /**************************************************
+           함수명: 사각형각
+           기능: 오른쪽상단으로 먼저 이동후 사각형으로
+                 전체 채우기 애니메이션
+        ***************************************************/
+       function 사각형각(){
+
+        //1.함수호출
+        console.log("사각사각");
+
+        //2. 대상선정: ./넌뭐냐
+        var 사각 = document.querySelector(".넌뭐냐");
+        //querySelector() 무조건 하나만 선택함
+
+        //3. 변경내용: top, transition, width, height
+        사각.style.top = "0";
+        사각.style.borderRadius = "0";
+        사각.style.width = "100vw";
+        사각.style.height = "100vh";
+        사각.style.transition = "3s 1s, top 1s 0s";
+        // -> 트랜지션 해석 : top값은 기다림없이 1초간 실행
+        //                   나머지는 모두 1초후 3초간 실행
+
+        // 4. 추가변경: 글자넣기
+        사각.innerText = "JS입문을 환영합니다!";　
+
+        // 글자관련 CSS변경하기
+        사각.style.fontSize = "5vw";
+        사각.style.color = "lime";
+        사각.style.lineHeight = "100vh";
+           
+    }//////////////////////사각형함수/////////////////////////
+    /////////////////////////////////////////////////////////
+
     </script>
     <style>
-        .pbox{
+        .pbox {
             position: absolute;
             top: 0;
             left: 0;
@@ -263,15 +370,64 @@
             color: yellow;
             text-shadow: 1px 1px 1px #000;
         }
+
+        /* 원모양 박스 */
+        .circle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .circle:nth-of-type(1){
+            background-image: url(./images/01.png);
+            right: 400px;
+        }
+        .circle:nth-of-type(2){
+            right: 200px;
+            background-image: url(./images/02.png);
+        }
+        .circle:nth-of-type(3){
+            background-image: url(./images/03.png);
+        }
+
+        .넌뭐냐{
+            position: absolute;
+            top: 40%;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            white-space: nowrap;
+            /* 줄바꿈 방지 */
+            border-radius: 50%; /* 원 */
+            background: url(./images/04.png) no-repeat top/cover;
+        }
+
     </style>
 </head>
+
 <body>
-    
+
     <p class="pbox" title="여기를 클릭하세요!" onclick="showMe()">
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
     </p>
 
-    
+    <!-- 원모양 박스 -->
+    <div class="circle" onclick="circle(0)"></div>
+    <div class="circle" onclick="circle(1)"></div>
+    <div class="circle" onclick="circle(2)"></div>
+
+    <!-- 사각형으로 변할 원박스 -->
+    <div class="넌뭐냐" onclick="사각형각()"></div>
+
 </body>
+
 </html>
