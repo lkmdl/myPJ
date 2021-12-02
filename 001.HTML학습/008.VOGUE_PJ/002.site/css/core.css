@@ -45,11 +45,12 @@
 }
 
 /* 비율유지박스 */
-.rbx{
+.rbx {
     position: relative;
     /* 부모자격 - .rbxIn */
     /* height값 설정이 없어야함! */
 }
+
 /* 비율유지박스 가상요소 비율밀기셋팅 */
 .rbx::before {
     content: '';
@@ -58,10 +59,12 @@
     /* 부모박스의 가로에 대한 %비율
     -> 파트별 개별적으로 비율을 따로 줘야함! */
 }
+
 /* 파트1비율 */
 .pt1.rbx::before {
     padding-top: 55.69%;
 }
+
 /* 파트1비율계산
     1300 : 724 = 100 : x
     x = 724 * 100 / 1300 
@@ -72,6 +75,7 @@
 .pt2.rbx::before {
     padding-top: 50%;
 }
+
 /* 파트2비율계산
     1300 : 650 = 100 : x
     x = 650 * 100 / 1300 
@@ -94,18 +98,47 @@
     /* .pt2의 flex적용인 경우 높이값 불필요! */
 }
 
+.cbx {
+    position: relative;
+    /* 부모자격 - 하위 h2 */
+}
+
+/* 파트1의 컨텐츠박스 */
+.pt1 .cbx {
+    height: 100%;
+}
+
+/* 가상요소로 방투명 검정배경 그라데이션 넣기 */
+
+/* 컨텐츠 타이틀 박스 */
+.cbx h2 {
+    width: 100%;
+    font-family: 'NanumBarunGothic', sans-serif;
+    bottom: 0%;
+    position: absolute;
+    text-align: center;
+    /* 쉡폰트 열문체, 한글체 */
+    box-sizing: border-box;
+    /* 패딩 보더 내부포함 */
+    font-size: 33px;
+    color: #fff;
+
+    margin: 50px;
+}
+
 /* 3개로 구성되는 컨텐츠박스 */
 /* flex적용하기! */
-.fbx{
+.fbx {
     display: flex;
 }
+
 .fbx>.cbx {
     flex: 1;
     /* 등분할설정! */
 }
 
 /* 공통 배경설정 */
-.bgi{
+.bgi {
     background-repeat: no-repeat;
     background-size: cover;
 }
