@@ -6,11 +6,13 @@
     <title>보그 코리아에 오신것을 환영합니다!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css">
     <link rel="stylesheet" href="002.site/css/main.css">
+    <link rel="stylesheet" href="002.site/css/media.css">
+    <!-- 미디어쿼리를 본css하단에 link방식으로 넣어준다! -->
 </head>
 <body>
 
     <!-- 1. 상단영역 -->
-    <div>
+    <div id="top">
         <header class="top ibx">
             <!-- 1-1.상단메뉴 -->
             <div class="tmenu">
@@ -103,10 +105,20 @@
                     </li>
                 </ul>
             </nav>
+            <!-- 1-4.모바일버튼 -->
+            <!-- 햄버거버튼 -->
+            <a href="#" class="ham">≡</a>
+            <!-- 검색버튼 -->
+            <a href="" class="mag fi fi-search">
+                <span class="ir">모바일검색버튼</span>
+            </a>
+            <!-- 1-5. 모바일버튼 -->
+
+
         </header>
     </div>
     <!-- 2. 메인영역 -->
-    <div>
+    <div id="cont" class="bgc">
         <main class="cont ibx">
             <!-- 컨텐츠1 - 파트1:1개 -->
             <section class="pt1 rbx">
@@ -194,9 +206,32 @@
         </main>
     </div>
     <!-- 3. 하단영역 -->
-    <div>
+    <div id="info" class="bgc">
         <footer class="info ibx">
-
+            <!-- 3-1.하단로고 -->
+            <div class="blogo">
+                <img src="002.site/images/footer_logo.png" alt="하단로고">
+            </div>
+            <!-- 3-2.회사주소 -->
+            <address class="addr">
+                WWW.VOGUE.COM Ⓒ CONDÉNAST ASIA PACIFIC. INC. ALL RIGHTS RESERVED. VOGUE.COM KOREA IS OPERATED BY DOOSAN MAGAZINE.
+            </address>
+            <!-- 3-3.하단링크 -->
+               
+            <ul class="blink">
+                <li>
+                    <a href="#">정기구독</a>
+                </li>
+                <li>
+                    <a href="#">회사소개</a>
+                </li>
+                <li>
+                    <a href="#">광고 및 제휴</a>
+                </li>
+                <li>
+                    <a href="#">개인정보 처리방침</a>
+                </li>
+            </ul>
         </footer>
     </div>
 

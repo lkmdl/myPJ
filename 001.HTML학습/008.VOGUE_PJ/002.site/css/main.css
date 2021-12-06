@@ -2,9 +2,14 @@
 /* 보그 PJ 메인 CSS - main.css */
 
 /* 외부CSS 합치기 */
-@import url(./reset.css);
-@import url(./core.css);
-@import url(./common.css);
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+/* 아웃라인 표시 */
+/* body * {
+    outline: 1px dotted #aaa;
+} */
 
 
 /* 개별배경이미지 */
@@ -65,4 +70,3 @@
 
 
 /******************* 2. 메인영역 *******************/
-

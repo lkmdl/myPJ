@@ -6,6 +6,20 @@
 */
 
 /******************* 1. 상단영역 *******************/
+/* 겉박스 */
+#top {
+    position: relative;
+    /* z-index적용위해! */
+
+    box-shadow: 0 2px 2px rgb(0 0 0 / 12%);
+    /* 
+        [ rgba 색상 표기법 2가지 스타일 ]
+        rgba(0, 0, 0, 0.12)
+        rgb(0 0 0 / 12%) -> 마지막 %는 투명도(알파값)
+    */
+    z-index: 9999;
+    /* 가장위 - 아래 #cont박스에 그림자가 덮임! */
+}
 .top {
     min-height: 206px;
     /* GNB메뉴가 좁아지면 줄바꿈해서 높이값이 늘어남!
@@ -14,11 +28,18 @@
 
 /************** 1-1.상단메뉴 ************/
 .tmenu {
+    display: flex;
+    /* 플렉스박스 */
     max-width: 970px;
     /* 최대970px이고 이것보다 작아지면 auto */
     height: 45px;
     margin: 0 auto;
     /* 가로중앙정렬 */
+}
+
+.tmenu>div {
+    flex: 1;
+    /* 플렉스 자식 등분할 */
 }
 
 /************** 1-1-1.sns박스 *************/
@@ -102,6 +123,8 @@
     /* 투명하기때문에 숨기기 */
     height: 0;
     overflow: hidden;
+
+
 }
 
 /* 상위메뉴li에 마우스 오버시 하위메뉴 보이기 */
@@ -112,7 +135,6 @@
 
     /* 트랜지션 - 오버시에만 적용됨! */
     transition: opacity .4s ease-in-out;
-
 }
 
 /* 서브메뉴 a요소 */
@@ -137,7 +159,8 @@
 }
 
 /* 첫번째 사이드메뉴에 마우스 오버시 커서모양 text */
-.smbx>li:first-child a { /* 직계 a로 할것 */
+.smbx>li:first-child>a {
+    /* 직계a로 할것! 서브a엔 미적용! */
     cursor: text;
 }
 
@@ -156,8 +179,8 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
     line-height: 40px;
-    padding: 0 30px;
 
+    padding: 0 30px;
     margin-top: 11px;
 }
 
@@ -175,7 +198,7 @@
     padding-right: 45px;
 }
 
-/* 마지막 리스트 li 돋보기 */
+/* 마지막 리스트li 돋보기 두꺼운체 */
 .gnb li:last-child a {
     font-weight: bold;
 }
@@ -185,23 +208,92 @@
     /* 공통패딩값 없앰 */
 }
 
-/* gnb 링크 트랜지션 */
-.gnb a{
-    transition: color .7s;
-    
+/* GNB 링크 트랜지션 */
+.gnb a {
+    transition: color .3s;
 }
 
-.gnb a:hover{
-    color: red,
+/* 오버시 */
+.gnb a:hover {
+    color: red;
 }
 
-/******************* 2. 하단영역 *******************/
+/******************* 모바일 메뉴 *******************/
+/* 햄버거 버튼 */
+.ham{
+    position: absolute;
+    top: 25px;
+    left: 11px;
+    font-size: 28px;
+    font-weight: bold;
+    transform: scaleX(1.4);
+    line-height: 0;
+    display: none;
+    /* 처음에 안보임 */
+}
+/* 돋보기 버튼 */
+.mag{
+    position: absolute;
+    top: 25px;
+    right: 11px;
+    line-height: 0;
+    font-weight: bold;
+    transform: scale(1.2);
+    display: none;
+    /* 처음에 안보임 */
+}
 
+/* 모바일메뉴박스  */
 
-
+#mobx {
+    display: block;
+}
 
 
 /******************* 3. 하단영역 *******************/
 .info {
-    height: 285px;
+    min-height: 285px;
+    /* 최소 285px높이를 유지하다가 
+    내용이 많아지면 늘어남 */
+    background-color: #000;
+    padding: 70px;
+    box-sizing: border-box;
+    /* 패딩,보더포함 */
+    font-family: 'Roboto','NanumBarunGothic';
+}
+/* 3-1.하단로고 */
+.blogo{
+    text-align: center;
+    /* 이미지중앙정렬 */
+}
+
+/* 3-2.회사주소 */
+.addr{
+    color: #747474;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    /* 이탤릭해제 */
+    margin: 20px 0 10px;
+    /* 마진: 위 양쪽 아래 */
+}
+/* 3-3. 하단링크 */
+.blink {
+    display: flex;
+    /* 플렉스박스 */
+    flex-wrap: wrap;
+    /* 플렉스 자동줄바꿈 */
+    justify-content: center;
+    /* 가로정렬 중앙 */
+
+}
+.blink a{
+    color: #747474;
+    font-size: 13px;
+    margin: 0 5px;
+}
+
+/* 마지막 li만 두껍게! */
+.blink li:last-child a{
+    font-weight: bold;
 }
