@@ -26,8 +26,7 @@
 }
 
 /* 5) 햄버거, 검색버튼 보이기(만들어야함) */
-.ham.mag{
-
+.ham,.mag{
     display: block;
 }
 
