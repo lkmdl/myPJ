@@ -26,6 +26,28 @@
     그래서 최소높이로 잡아야 늘어날 수 있음! */
 }
 
+/* #top에 클래스가 "on" 넣을 경우 슬림사이즈 상단영역변경 */
+#top.on .logo{
+    position: absolute;
+    top: 0;
+    font-size: 100%;
+    text-align: center;
+}
+
+#top.on .logo img{
+    width: 100px;
+}
+
+#top.on .tmenu{
+    display: none;
+}
+
+#top.on .top{
+    min-height: auto;
+}
+/* 위의 모든 슬림메뉴 변경은 #top에 .on을 준경우 적용 */
+
+
 /************** 1-1.상단메뉴 ************/
 .tmenu {
     display: flex;
@@ -255,12 +277,12 @@
 .mwrap{
     position: absolute;
     top: 7px;
-    bottom: 7px;
     left: 30px;
     right: 30px;
-    height: 36px;
-    /* 부모박스기준 박스당기기 
+    /* 부모박스기준 박스당기기(양쪽방향) 
     -> 유동적인 가로크기가 생성됨! */
+    height: 36px;
+    /* 높이값은 정해줌! */
     background-color: #000;
 }
 /* 검색입력창 */
