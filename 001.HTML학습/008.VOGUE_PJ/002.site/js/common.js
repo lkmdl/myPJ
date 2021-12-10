@@ -1,18 +1,37 @@
 // 공통기능구현 JS - common.js
 
-/////////// 윈도우 스크롤시 이벤트 함수///////////
+///////// 윈도우 스크롤시 이벤트 함수 ////////////
 window.addEventListener("scroll",()=>{
 
     // 스크롤 위치값
     let scTop = this.scrollY;
-    // scrollY - 세로측 스크롤 위치값 리턴
+    // scrollY - 세로축 스크롤 위치값 리턴
+    // this는 화살표함수에서 window를 나타냄
 
-    console.log("스크롤중",scTop);
+    /******************************************** 
+        윈도우 세로 스크롤 위치값을 가져오는 방법
+        1. this.scrollY
+        2. window.scrollY
+        3. document.scrollingElement.scrollTop
+        4. document.documentElement.scrollTop
+        5. document.querySelector("html").scrollTop
+    ********************************************/
 
+    // console.log("스크롤중~~~",scTop);
 
+    // 상단영역
+    let top = document.querySelector("#top");
 
+    /////// 스크롤위치값이 100이상일때 /////
+    if(scTop>=100){ // 100px이상
+        top.classList.add("on");
+    } /////////// if /////////////
+    else{ // 100px 미만
+        top.classList.remove("on");
+    } ///////// else //////////////
 
-});
+}); ////////////// scroll 이벤트함수 ////////////
+////////////////////////////////////////////////
 
 //////////// 로딩구역 /////////////////////////
 window.addEventListener("DOMContentLoaded",
@@ -83,6 +102,20 @@ function(){
         // 1. 함수호출확인!
         console.log("검색버튼클릭!");
 
+        // 2. 대상선정: .mos
+        let mos = document.querySelector(".mos");
+        // 대상의 높이값
+        let mosh = mos.offsetHeight;
+
+        // 3. 높이값이 0이면 보이게 아니면 숨기기
+        if(mosh===0){
+            mos.style.height = "50px";
+            mos.style.transition = "height .3s ease-out";
+        } //////// if ////////////
+        else {
+            mos.style.height = "0";
+        } //////// else //////////
+
 
 
         // a요소는 기본이동 특성이 있어서
@@ -92,9 +125,6 @@ function(){
 
     }; /////////// click ////////////////////
     /////////////////////////////////////////
-
-
-
 
 
 }); ////////////// 로딩구역 //////////////////
