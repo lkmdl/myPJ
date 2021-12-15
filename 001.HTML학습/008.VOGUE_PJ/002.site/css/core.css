@@ -45,11 +45,12 @@
 }
 
 /* 비율유지박스 */
-.rbx{
+.rbx {
     position: relative;
     /* 부모자격 - .rbxIn */
     /* height값 설정이 없어야함! */
 }
+
 /* 비율유지박스 가상요소 비율밀기셋팅 */
 .rbx::before {
     content: '';
@@ -58,10 +59,12 @@
     /* 부모박스의 가로에 대한 %비율
     -> 파트별 개별적으로 비율을 따로 줘야함! */
 }
+
 /* 파트1비율 */
 .pt1.rbx::before {
     padding-top: 55.69%;
 }
+
 /* 파트1비율계산
     1300 : 724 = 100 : x
     x = 724 * 100 / 1300 
@@ -72,6 +75,7 @@
 .pt2.rbx::before {
     padding-top: 50%;
 }
+
 /* 파트2비율계산
     1300 : 650 = 100 : x
     x = 650 * 100 / 1300 
@@ -94,6 +98,7 @@
     cursor: pointer;
     /* 커서 손가락모양 */
 }
+
 /* 가상요소로 반투명 검정배경 그라데이션 넣기 */
 .cbx::before {
     content: '';
@@ -103,10 +108,11 @@
     left: 0;
     width: 100%;
     height: 50%;
-    background-image: 
-    linear-gradient(to top, 
-    rgba(0, 0, 0, 0.726),rgba(0, 0, 0, 0));
+    background-image:
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.726), rgba(0, 0, 0, 0));
 }
+
 /* 컨텐츠박스 가상요소로 보더애니 구현 */
 .cbx::after {
     content: '';
@@ -125,6 +131,7 @@
     /* 트랜지션: 속시이지 */
     transition: all .2s ease-in;
 }
+
 /* .pbx에 마우스 오버시 보더애니 */
 .cbx:hover::after {
     border: 20px solid red;
@@ -148,33 +155,39 @@
     /* 패딩,보더 내부포함 */
 
     /* 글자체 */
-    font-family: 'Pistilli','NanumBarunGothic';
+    font-family: 'Pistilli', 'NanumBarunGothic';
     /* 웹폰트 영문체(Pistilli), 한글체(NanumBarunGothic) */
-    font-size: min(33px,3vw);
+    font-size: min(33px, 3vw);
     /* min()을 사용하여 33px과 3vw중 작은 크기가
     적용됨(결과적으로 최대값 33px이 되는것임!) */
     font-weight: lighter;
     text-align: center;
     color: #fff;
 
-    padding: min(50px,3vw);
+    padding: min(50px, 3vw);
     /* 패딩크기도 최대 50px을 유지하다가 
     화면크기에 맞춤 */
+}
+
+/* 타이틀 작은글자 */
+.cbx h2 small {
+    font-size: 14px;
 }
 
 
 /* 3개로 구성되는 컨텐츠박스 */
 /* flex적용하기! */
-.fbx{
+.fbx {
     display: flex;
 }
+
 .fbx>.cbx {
     flex: 1;
     /* 등분할설정! */
 }
 
 /* 공통 배경설정 */
-.bgi{
+.bgi {
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -191,6 +204,6 @@
 }
 
 /* 배경색 class */
-.bgc{
+.bgc {
     background-color: #f9f9f9;
 }
