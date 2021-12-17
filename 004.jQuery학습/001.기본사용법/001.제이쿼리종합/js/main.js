@@ -34,7 +34,7 @@ $(function () { ////////// jQB ///////////////////////////
     // 미니언즈 가로위치 보정값
     // 윈도우 가로크기의 5%
     let win5 = $(window).width() * 0.05;
-    console.log("가로크기5%:", win5);
+    // console.log("가로크기5%:", win5);
     // width() 가로크기, height() 세로크기
     // -> 단위없는 px값 리턴함
 
@@ -46,6 +46,7 @@ $(function () { ////////// jQB ///////////////////////////
     btns.hide().first().show();
     // 버튼들을 .숨겨() .첫번째()는 .보여()
     // 주어는 하나! 뒤에 메서드 체인!
+    // btns.hide().last().prev().prev().show();
 
     // 2-2. 빌딩숫자셋팅 : 
     // -> 모든 빌딩 li를 순서대로 돌면서 순번넣기 + 좀비넣기
@@ -67,10 +68,8 @@ $(function () { ////////// jQB ///////////////////////////
 
     /* 
         [ for문을 사용하지 않고 돌아주는 제이쿼리 메서드 ]
-
         >>> each(function(idx,ele){구현부})
         >>> each((idx,ele)=>{구현부})
-
         - 선택요소를 순서대로 돌면서 구현부를 실행함
         - idx 전달변수는 순번이 전달됨(0부터)
           (idx변수명은 내가 지을 수 있고 index를 줄인말)
@@ -208,7 +207,7 @@ $(function () { ////////// jQB ///////////////////////////
         // 4. 위치이동
         mi.animate({
                 top: tgtop + "px",
-                let: tgleft + "px"
+                left: tgleft + "px"
             }, 1000, "easeOutElastic", // 이징
             function () { // 콜백함수
                 // 5. 메시지 보이기
@@ -384,7 +383,8 @@ $(function () { ////////// jQB ///////////////////////////
 
 
     }); // 3-5. '무서우니 윗층으로!' 버튼 click 끝 ///////
-    // 3-6. '치료주사 방으로!' 버튼 click 시 ///////
+
+    // 3-6. '치료주사방으로!' 버튼 클릭시 ///////
     btns.eq(5).click(function () {
         console.log($(this).text(), "버튼");
 
@@ -405,108 +405,211 @@ $(function () { ////////// jQB ///////////////////////////
             top: tgtop + "px",
             left: tgleft + "px"
         }, 1000, "easeOutElastic", () => {
+
             // 5. 주사기 돌리기
-            // 주의ㅣ transform은 animate에서 사용불가
-            // transform은 transition 사용
+            // 주의: transform은 animate에서 사용불가!
+            // transform은 transition사용!
             $(".inj").css({
                 transform: "rotate(-150deg)",
-                transition: "0.5s ease-out 1s",
-                zIndex: "1000" // 좀비 보다 위
-            }); /// css ////////
+                transition: ".5s ease-out 1s",
+                zIndex: "9999" //좀비보다 위!
+            }); ////// css ///////////
 
             // 6. 주사놓은 후(1.5초) 다시 미니언즈2(후유증)
             setTimeout(() => {
+
                 // 6-1. 미니언즈 흑백모드 풀기
                 mi.css({
                         filter: "grayscale(0%)"
                     })
-                    // 6-2. 새로운 미니언즈 이미지 변경
-                    .find("img").attr("src", "images/mz2.png");
+                    // 6-2. 새로운 미니언즈 이미지 변경!
+                    .find("img").attr("src", "images/m2.png");
                 // 6-3. 주사기 제거하기
                 $(".inj").remove();
-                // remove() 매서드는 태그를 지운다
+                // remove() 메서드는 태그를 지운다!
 
                 // 7. 메시지 보이기
-                msg.text("치료완료").fadeIn(200)
-                    .delay(1000).fadeIn(2000, () => {
-                        msg.html("이제, 조금만 더 <br>가면 탈출이닷!@!");
-                    }); /////// fadeIn ///////////
+                msg.text("치료완료!").fadeIn(200)
+                    .delay(1000).fadeIn(200, () => {
+                        msg.html("이제, 조금만 더<br>가면 탈출이닷!");
+                    }); ///////// fadeIn ////////////
 
-                //8. 다음버튼 보이기 : '3번방으로'
+                // 8. 다음버튼 보이기 : '3번방으로!'
                 btns.eq(6).slideDown(400);
 
+            }, 1500); ///// setTimeout //////////
 
-            }, 1500); ///////////// setTimeOut
+        }); ///////// animate ////////////////
 
-        }); //animate////////////////////////////
+    }); // 3-6. '치료주사방으로!' 버튼 click 끝 ///////
 
-
-    }); // 3-6. '치료주사 방으로!' 버튼 click 끝 ///////
-    // 3-7. '3번 방으로!' 버튼 click 시 ///////
+    // 3-7. '3번방으로!' 버튼 클릭시 ///////
     btns.eq(6).click(function () {
         console.log($(this).text(), "버튼");
 
-                // 1. 자기자신 버튼 없애기
-                $(this).slideUp(200);
+        // 1. 자기자신 버튼 없애기
+        $(this).slideUp(200);
 
-                // 2. 메시지 지우기
-                msg.fadeOut(200);
-        
-                // 3. 이동위치
-                // 대상: 3번방
-                let tg = bd.eq(3);
-                let tgtop = tg.offset().top;
-                let tgleft = tg.offset().left + win5;
+        // 2. 메시지 지우기
+        msg.fadeOut(200);
 
-                //4. 위치이동
-                mi.animate({
-                    top: tgtop + "px",
-                    left: tgleft + "px"
+        // 3. 이동위치
+        // 대상: 3번방
+        let tg = bd.eq(3);
+        let tgtop = tg.offset().top;
+        let tgleft = tg.offset().left + win5;
 
-                },1000,()=>{
+        // 4. 위치이동
+        mi.animate({
+            top: tgtop + "px",
+            left: tgleft + "px"
+        }, 1000, () => {
 
-                    msg.text("어서 윗층으로 가자").fadeIn(200);
+            // 5. 메시지 보이기
+            msg.text("어서 윗층으로 가자!").fadeIn(200);
 
-                    // 6. 다음버튼 보이기 : '1번방으로!!'
-                    btns.eq(7).slideDown(300);
-                    
- 
-                }); /////// animate //////////
+            // 6. 다음버튼 보이기 : '1번방으로!'
+            btns.eq(7).slideDown(300);
 
-    });//////// 3-7. '3번 방으로!' 버튼 click 끝 ///////
+        }); ///////// animate //////////////
 
-    // 3-8. '1번 방으로!' 버튼 click 시 ///////
+    }); // 3-7. '3번방으로!' 버튼 click 끝 ///////
+
+    // 3-8. '1번방으로!' 버튼 클릭시 ///////
     btns.eq(7).click(function () {
         console.log($(this).text(), "버튼");
 
-                // 1. 자기자신 버튼 없애기
-                $(this).slideUp(200);
+        // 1. 자기자신 버튼 없애기
+        $(this).slideUp(200);
 
-                // 2. 메시지 지우기
-                msg.fadeOut(200);
-        
-                // 3. 이동위치
-                // 대상: 1번방
-                let tg = bd.eq(1);
-                let tgtop = tg.offset().top;
-                let tgleft = tg.offset().left + win5;
+        // 2. 메시지 지우기
+        msg.fadeOut(200);
 
-                //4. 위치이동
-                mi.animate({
-                    top: tgtop + "px",
-                    left: tgleft + "px"
+        // 3. 이동위치
+        // 대상: 1번방
+        let tg = bd.eq(1);
+        let tgtop = tg.offset().top;
+        let tgleft = tg.offset().left + win5;
 
-                },1000,()=>{
+        // 4. 위치이동
+        mi.animate({
+            top: tgtop + "px",
+            left: tgleft + "px"
+        }, 1000, "easeInOutBack", () => {
 
-                    msg.text("이제 곧 탈출이다").fadeIn(200);
+            // 5. 메시지 보이기
+            msg.text("이제 곧 탈출이닷!").fadeIn(200);
 
-                    // 6. 다음버튼 보이기 : '헬기를 호출!!!'
-                    btns.last().slideDown(300);
-                    // last()는 버튼 중 마지막버튼 선택
- 
-                }); /////// animate //////////
+            // 6. 다음버튼 보이기 : '헬기를 호출!'
+            btns.last().slideDown(300);
+            // last()는 버튼 중 마지막버튼 선택
 
-    });//////// 3-8. '1번 방으로!' 버튼 click 끝 ///////
+        }); ///////// animate //////////////
+
+    }); // 3-8. '1번방으로!' 버튼 click 끝 ///////
+
+    // 3-9. '헬기를 호출!' 버튼 클릭시 ///////
+    btns.last().click(function () {
+        console.log($(this).text(), "버튼");
+
+        // 1. 자기자신 버튼 없애기
+        $(this).slideUp(200);
+
+        // 2. 메시지 지우기
+        msg.fadeOut(200);
+
+        // 3. 이동위치
+        let tg = bd.eq(0); // 0번방
+        let tgtop = tg.offset().top; // 화면에서 top값
+        let tgleft = tg.offset().left + win5; // 화면에서 left값(보정)
+
+        // 4. 위치이동
+        mi.animate({
+            top: tgtop + "px",
+            left: tgleft + "px"
+        }, 1000, "easeInOutBack", () => {
+
+            // 5. 메시지 보이기
+            msg.text("도와줘요~!!!").fadeIn(200);
+
+            // 6. 좀비들 최총추적!!!
+            // -> 1번방에 숨겨진 좀비들 -> bd.eq(1).find(".mz")
+            bd.eq(1).find(".mz")
+                .fadeIn(200, function () { // 콜백함수
+
+                    // 6-1. 좀비들 움직이기
+                    $(this).animate({
+                        right: tg.width() * 1.3 + "px"
+                        // 오른쪽에서 li가로크기의 1.3배만큼 이동애니
+                    }, 5000, "easeInOutQuint"); ////// animate /////
+
+                    // 6-2. 헬기등장
+                    $(".heli").animate({
+                                left: "20%"
+                            }, 3000, "easeOutBack",
+                            function () { // 콜백함수
+
+                                // 7. 주인공이 헬기에 탄 이미지로 변경!
+                                $(this).attr("src", "images/heli2.png");
+
+                                // 8. 주인공 지우기(헬기에 탔으니까!)
+                                mi.hide(); // display:none 처리됨!
+
+                            }) /////// animate ///////
+                        .delay(1000) // 9. 1초 기다림
+                        .animate({ // 10. 오른쪽 끝으로 이동!
+                                left: "70%"
+                            }, 3000, "easeInOutQuart",
+                            function () { // 콜백함수
+
+                                // 11. 헬기 조정사가 좀비로 바뀐 이미지변경
+                                $(this).attr("src", "images/heli3.png");
+
+                            }) /////// animate /////
+                        .animate({ // 12. 아주 천천히 화면 바깥으로 나감
+                                left: "100%"
+                            }, 10000, "easeInOutSine",
+                            function () { // 콜백함수
+
+                                // 13. 미리 지정한 class를 타이틀에 줘서 간판떨어짐
+                                // 대상: .tit
+                                let tit = $(".tit");
+
+                                // 1단계 : 간판떨어짐(.on)
+                                tit.addClass("on");
+
+                                // 2단계 : 3초후 간판떨어짐(.on2)
+                                setTimeout(() => {
+
+                                    // 추가 클래스 넣기
+                                    tit.addClass("on2");
+
+                                    // 건물 무너지기 클래스 넣기(.on)
+                                    // 대상: .building -> bd변수를 사용해 보자!
+                                    // bd변수-> .building li
+                                    // 한칸위 부모요소로 올라감 -> parent() 메서드
+                                    bd.parent().addClass("on");
+
+                                }, 3000); /// setTimeout ///
+
+
+                                // [ 제이쿼리에서 클래스 조작하기! ]
+                                // addClass(클래스명) - 클래스넣기
+                                // removeClass(클래스명) - 클래스지우기
+                                // toggleClass(클래스명) - 클래스넣기/지우기
+                                // -> JS의 classList 객체의 add,remove,toggle과유사
+
+
+                            }); ////////// animate //////////////
+
+
+                }); ///////// fadeIn //////////
+
+        }); //////// animate //////////////
+
+    }); // 3-9. '헬기를 호출!' 버튼 click 끝 ///////
+
+
 
 
 }); //////////////////// jQB ///////////////////////////
