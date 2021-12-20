@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Page Scroll</title>
+    <title>One Page - Scrolling Horizontal</title>
     <style>
         html,
         body {
@@ -12,10 +12,10 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            
-            overflow: hidden;
             /* 보이는 화면기준 채우기 */
             /* body하위 요소의 높이값 %의 기준이됨! */
+            overflow: hidden;
+            /* 스크롤숨김(스크롤안됨!) */
         }
 
         /* 공통셋팅 */
@@ -55,14 +55,24 @@
             padding: 0;
             font-size: 100%;
         }
+        /* 페이지 최상위 부모박스 */
+        .wrap {
+            width: 700vw;
+            /* 보이는 화면의 7개 */
+            height: 100vh;
+            display: flex;
+        }
+
+
 
         /* 공통 class */
 
         /* 페이지 공통 class */
         .page {
+            flex: 1; /* width, height 크기설정 불필요 */
             /* 한페이지 보이는 화면 채우기 */
-            width: 100%;
-            height: 100%;
+            /* width: 100%;
+            height: 100%; */
             /* 
                 width: 100vw;
                 height: 100vh;
@@ -135,8 +145,9 @@
             margin: 0 7px;
         }
 
-        /* 메뉴에 마우스 오버시 */
-        .gnb a:hover {
+        /* 메뉴에 마우스 오버시 + 부모li에 .on인 경우 */
+        .gnb a:hover,
+        .gnb li.on a {
             display: inline-block;
             /* 트랜스폼적용위해 */
             color: lime;
@@ -174,41 +185,102 @@
         #pg7 {
             background: url(images/pic7.png) no-repeat top/cover;
         }
+
+        /* 인디케이터 */
+        .indic {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            /* 세로중앙이동 */
+            left: 5%;
+            width: 20px;
+            /* outline: 3px dotted blue; */
+        }
+
+        .indic li {
+            width: 100%;
+            height: 10px;
+            margin: 3px 0;
+            cursor: pointer;
+            /* 손가락모양 */
+        }
+
+        /* a요소 */
+        .indic a {
+            display: block;
+            width: 100%;
+            height: 2px;
+            margin-top: 4px;
+            background-color: #ccc;
+            box-shadow: 1px 1px 1px #777;
+            transition: width .4s;
+        }
+
+        /* 마우스 오버시 + 클래스 "on" */
+        .indic li:hover a,
+        .indic li.on a {
+            width: 150%;
+            background-color: #fff;
+        }
+
+
+        /* 설명글자숨기기 */
+        .indic span {
+            display: none;
+        }
     </style>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery-autoScroll1.0.js"></script>
+    <script src="js/jquery-HRCcroll-1.0.js"></script>
     <script>
         ///////////// 로딩구역 //////////////////////////////////
         $(function () { ////// jQB ///////////////////////////////
 
-            /************************************* 
-                GNB a요소 클릭시 페이지 이동하기
-            *************************************/
-            // 대상: .gnb a
-            $(".gnb a").click(function (e) { // e - 이벤트전달값
-
-                // 기본기능막기 : a의 이동기능막기
+            // a요소 기본이동막기 ///////
+            $("a").click(function (e) {
                 e.preventDefault();
+            }); /////////// click ////////////
 
-                // 1. 클릭된 a요소의 href값 읽어오기
-                // $(this) -> 클릭된 a요소 자신!
-                let idnm = $(this).attr("href");
-                // attr(속성명) -> 속성값 읽어오기
-                console.log("href값:", idnm);
+            /************************************* 
+                GNB li요소 클릭시 페이지 이동하기
+                + 인디케이터 li요소 클릭시 기능동일!
+            *************************************/
+            // 대상: .gnb li + .indic li
+            $(".gnb li,.indic li").click(function (e) { // e - 이벤트전달값
 
-                // 2. 아이디요소의 위치값 알아내기
-                // offset().top 으로 알아냄
-                let pos = $(idnm).offset().top;
-                console.log("위치값",pos);
+                // 기본기능막기 : li의 이동기능막기 불필요!
+                // e.preventDefault();
 
-                // 3. 스크롤 위치 이동 애니메이션
-                // 대상: html,body -> 최상위부모 2개 그룹선택
-                // 이동속성 : scrollTop -> 세로스크롤 위치속성
-                // 참고) scrollLeft 는 가로스크롤
+                // 1. 클릭된 li요소의 순번읽어오기
+                // $(this) -> 클릭된 li요소 자신!
+                let idx = $(this).index();
+                // index() 요소(li)의 순번
+                console.log("클릭된 li순번:", idx);
+
+                // 2. 클릭된 순번을 전역 페이지변수 pno에 넣어 일치시키기
+                pno = idx;
+
+                //***************************
+                // 3. 페이지번호를 가로값값에 곱하여 스크롤 이동하기
+                // 이동높이값
+                let pos = $(window).width() * pno;
+                // console.log("이동값:", pos);
+                // 이동애니메이션
                 $("html,body").animate({
-                    scrollTop: pos + "px"
-                }, 700,"easeInOutQuint");
+                    scrollLeft: pos + "px"
+                }, dur_sc, easing_sc);
+                // dur_sc 상수에 공통시간설정
+
+                // 4. 클릭시 .gnb+.indic 의 li에 클래스 on넣기
+                $(".gnb li").eq(pno).addClass("on")
+                // $(gnb전체li).eq(해당순번).클래스넣기("on")
+                .siblings().removeClass("on");
+                // .다른형제들().클래스제거("on")
+
+                $(".indic li").eq(pno).addClass("on")
+                // $(indic전체li).eq(해당순번).클래스넣기("on")
+                .siblings().removeClass("on");
+                // .다른형제들().클래스제거("on")
 
 
             }); /////////// click ////////////
@@ -232,7 +304,7 @@
             <!-- 1-2.GNB메뉴 -->
             <nav class="gnb">
                 <ul>
-                    <li>
+                    <li class="on">
                         <a href="#pg1">아수라</a>
                     </li>
                     <li>
@@ -259,13 +331,42 @@
     </div>
 
     <!-- 2. 페이지영역 -->
-    <section id="pg1" class="page"></section>
-    <section id="pg2" class="page"></section>
-    <section id="pg3" class="page"></section>
-    <section id="pg4" class="page"></section>
-    <section id="pg5" class="page"></section>
-    <section id="pg6" class="page"></section>
-    <section id="pg7" class="page"></section>
+    <div class="wrap">
+        <section id="pg1" class="page"></section>
+        <section id="pg2" class="page"></section>
+        <section id="pg3" class="page"></section>
+        <section id="pg4" class="page"></section>
+        <section id="pg5" class="page"></section>
+        <section id="pg6" class="page"></section>
+        <section id="pg7" class="page"></section>
+    </div>
+
+    <!-- 3.인디케이터(위치표시자) -->
+    <nav class="indic">
+        <ul>
+            <li class="on">
+                <a href="#pg1"><span>아수라</span></a>
+            </li>
+            <li>
+                <a href="#pg2"><span>고산자</span></a>
+            </li>
+            <li>
+                <a href="#pg3"><span>인천상륙작전</span></a>
+            </li>
+            <li>
+                <a href="#pg4"><span>봉이김선달</span></a>
+            </li>
+            <li>
+                <a href="#pg5"><span>비밀은없다</span></a>
+            </li>
+            <li>
+                <a href="#pg6"><span>아가씨</span></a>
+            </li>
+            <li>
+                <a href="#pg7"><span>탐정홍길동</span></a>
+            </li>
+        </ul>
+    </nav>
 
 
 </body>

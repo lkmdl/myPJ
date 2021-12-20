@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded",()=>{
      * 변경내용: a의 텍스트를 읽어서 링크구성
     *************************************************/
    let gnb = document.querySelectorAll(".gnb a");
-   console.log("메뉴개수:",gnb.length);
+//    console.log("메뉴개수:",gnb.length);
 
     // gnb click 이벤트 연결하기 //////
     for(let x of gnb){
