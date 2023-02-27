@@ -36,8 +36,3 @@
 
    (2) Uncaught SyntaxError: Unexpected token 
 	- JS 문법이 잘못된 경우 메시지
-
-
-
-
-
